@@ -1,0 +1,39 @@
+.tool-card{
+    width: 400px;
+    height: 350px;
+    background-color: #272D32;
+    border-bottom: 2px solid #ED9B35 ;
+    color: #fff;
+    
+    position: relative;
+}
+a{
+
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px;
+}
+
+.image-box{
+    width: 50px;
+    height: 50px;
+    
+    margin-bottom: 20px;
+}
+
+h4{
+    font-size: 1.2rem;
+    font-family: "Abel", sans-serif;
+}
+
+.liner{
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: #ED9B35;
+    margin: 10px 0 15px 0;
+
+}

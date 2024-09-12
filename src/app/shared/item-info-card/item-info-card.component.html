@@ -1,0 +1,13 @@
+<div class="item-card">
+    <div class="image-box">
+        <img [src]="{itemImage}" alt="Journey 1">
+    </div>
+    <div class="content-box" [ngStyle]="{'background-color' : itembackground, 'border':itemBorder}" >
+        <h3> {{itemTitle}}</h3>
+        <div class="liner"></div>
+        <p>{{itemMessage}}</p>
+        
+        <a href="{{itemLink}}" class="content-btn">Continue</a>
+    </div>
+    
+</div>

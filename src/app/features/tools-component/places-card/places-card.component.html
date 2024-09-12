@@ -1,0 +1,12 @@
+<div class="places-card"
+     [ngStyle]="{'background-image': 'url(' + placesCardBackground + ')'}"
+     (mouseenter)="onMouseEnter()" 
+     (mouseleave)="onMouseLeave()"
+     >
+    <h3>{{placeTitle}}</h3>
+    <div class="card-info" [ngClass]="{'hidden': !isHovered}">
+        <p>{{placeInfo}}</p>
+        <button><a [href]="placeLink">Read More</a></button>  <!-- Bind placeLink to href -->
+    </div>
+</div>
+

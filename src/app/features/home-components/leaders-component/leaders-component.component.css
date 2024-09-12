@@ -1,0 +1,49 @@
+.leaders-section{
+    color: #fff;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the button horizontally */
+   
+}
+
+.leaders-list{
+    width: 85%;
+   margin-top: -30px;
+    display: flex;
+    overflow-x: clip;
+}
+
+.leader-box{
+    width: 230px;
+    height: 220px;
+    margin-right: 5px;
+}
+
+.pic-box{
+    width: 100%;
+    height: 80%;
+    background-color: gray;
+}
+
+img{
+    object-fit: cover;
+    border: 1px solid #BF9C7D;
+}
+
+p{
+    /* border-top: 1px solid #BF9C7D ; */
+    padding: 5px;
+    background-color: #1b1f22;
+}
+
+.leaders-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #BF9C7D;
+    margin-top: 30px;
+}
+
+
+

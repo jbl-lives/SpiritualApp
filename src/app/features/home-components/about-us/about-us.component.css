@@ -1,0 +1,46 @@
+.about-us-section{
+    width: 100%;
+    background-image: url("../../../../assets/images/fire.jpg");
+    background-size: cover;
+    color: #fff;
+    padding: 80px 100px;
+
+}
+
+.about-us-box{
+    width: 100%;
+    background-color: #0E1317;
+    padding: 80px;
+    position: relative;
+}
+
+.about-us-box::before, .about-us-box::after{
+    content: "";    
+    position: absolute;
+    
+}
+
+.about-us-box::before{
+    width: 50px;
+    height: 50px;
+    background: #E5AC66;
+    left: -25px;
+    top: -25px;
+}
+
+.about-us-box::after{
+    border: 1px solid #E5AC66;
+    width: 95%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.liner{
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: aliceblue;
+    margin: 15px 0;
+}

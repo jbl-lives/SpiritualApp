@@ -1,0 +1,7 @@
+<div class="intro-banner" [ngStyle]="{'background-color': background }">
+    <h3>{{ title }}</h3>
+    <div *ngIf="showLiner" class="liner" [ngStyle]="{'background-color': linerBackground }"></div>
+    <p>{{ message }}</p>
+</div>
+
+

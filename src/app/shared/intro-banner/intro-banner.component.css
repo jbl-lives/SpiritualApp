@@ -1,0 +1,19 @@
+.intro-banner{
+    padding: 50px 0;
+    text-align: center;
+}
+
+.liner{
+    content: '';
+    width: 100px;
+    height: 2px;
+    margin: 20px auto;
+}
+p, h3{
+    
+    margin: 0 auto;
+}
+
+p{
+    width: 400px;
+}

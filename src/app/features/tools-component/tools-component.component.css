@@ -1,0 +1,50 @@
+.tools-section{
+    width: 100%;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+app-tool-card{
+    margin: 3px;
+}
+
+.places-section {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+  }
+
+.places-section::-webkit-scrollbar {
+    display: none;  /* Hide default scrollbar */
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+  }
+  
+  .prev-btn, .next-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .prev-btn {
+    left: 0;
+    z-index: 3;
+  }
+  
+  .next-btn {
+    right: 0;
+  }

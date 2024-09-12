@@ -1,0 +1,65 @@
+.places-card{
+    width: 360px;
+    min-width: 360px; 
+    height: 460px;
+    background: rgb(39, 38, 38);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ED9B35;
+    margin-left: 5px;
+    flex-shrink: 0; 
+}
+.places-card::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    background: rgb(17,32,47);
+    background: linear-gradient(5deg, rgb(0, 0, 0) 15%,rgba(0,0,0,0) 60%);
+    
+}
+
+h3{
+    position: absolute;
+    bottom: 3%;
+    left: 7%;
+    color: #fff;
+
+}
+
+.card-info{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.863);
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+p{
+    width: 100%; 
+    margin-bottom: 30px;
+}
+
+button{
+    background-color: #BF9C7D;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+

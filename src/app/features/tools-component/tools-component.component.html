@@ -1,0 +1,135 @@
+<app-navigation></app-navigation>
+<app-intro-banner
+    title="Tools used to connect to the Spiritual Realm" 
+    message="These are some of the tools one can use to make contact into the 
+    spirit realm and communicate with the forces that be."
+    background="#fff"
+    [linerBackground]="'#ED9B35'"
+    [showLiner]="true">
+>   
+</app-intro-banner>
+<section class="tools-section">
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/candle2.png"
+        header="Candles"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/cloth.png"
+        header="Cloths/Masela/Ibhayi"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/sage.png"
+        header="Incese/Mphepho"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/snuff.png"
+        header="Snuff"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/glass-of-water.png"
+        header="Glass of Water"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    <app-tool-card
+        link=""
+        imageLink="../../../assets/icons/bible-book.png"
+        header="Bible"
+        message="Candles are considered the starting point of connecting
+         with the spiritual realm. Because of their universal nature 
+         they are considered safe especially the white candle. "    
+    >
+    </app-tool-card>
+
+    
+
+</section>
+
+<app-intro-banner
+    title="Places that enhance spiritual connection" 
+    message="These are some of the tools one can use to make contact into the 
+    spirit realm and communicate with the forces that be."
+    background="#fff"
+    [linerBackground]="'#ED9B35'"
+    [showLiner]="true">
+>   
+</app-intro-banner>
+
+<div class="slider-container places">
+    <button class="prev-btn" (click)="scrollLeft()">←</button>
+    
+    <section class="places-section" #slider>
+        <app-places-card
+             placesCardBackground="../../../assets/images/places1.jpg"
+             placeTitle="Rivers"
+             placeInfo="Explore the beautiful rivers around the world."
+             placeLink="/rivers"
+        ></app-places-card>
+     
+        <app-places-card
+             placesCardBackground="../../../assets/images/places2.jpg"
+             placeTitle="Open Field"
+             placeInfo="Discover stunning mountains across the globe."
+             placeLink="/mountains"
+        ></app-places-card>
+  
+        <app-places-card
+             placesCardBackground="../../../assets/images/places3.jpg"
+             placeTitle="Mountains"
+             placeInfo="Discover stunning mountains across the globe."
+             placeLink="/mountains"
+        ></app-places-card>
+  
+        <app-places-card
+            placesCardBackground="../../../assets/images/places4.jpg"
+            placeTitle="Waterfalls"
+            placeInfo="Discover stunning mountains across the globe."
+            placeLink="/mountains"
+        ></app-places-card>
+
+        <app-places-card
+            placesCardBackground="../../../assets/images/places5.jpg"
+            placeTitle="trees"
+            placeInfo="Discover stunning mountains across the globe."
+            placeLink="/mountains"
+        ></app-places-card>
+
+        <app-places-card
+            placesCardBackground="../../../assets/images/places6.png"
+            placeTitle="Anthills"
+            placeInfo="Discover stunning mountains across the globe."
+            placeLink="/mountains"
+        ></app-places-card>
+    </section>
+    
+    <button class="next-btn" (click)="scrollRight()">→</button>
+  </div>
+  

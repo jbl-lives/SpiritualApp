@@ -1,0 +1,54 @@
+.landing-page{
+    width: 100%;
+    height: 90vh;
+    background : green;
+    background-image: url("../../../../assets/images/landing-pic.webp");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.landing-page::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #0e131796;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info{
+    width: 240px;
+   
+    position: absolute;
+    right: 18%;
+    top: 30%;
+}
+
+.info h1{
+    font-size: 3.5rem;
+    color: #E5AC65;
+    border-bottom: 1px solid #E5AC65;
+    padding-bottom: 10px;
+}
+
+.info p{
+    color: #fff;
+    padding-top: 10px;
+}
+
+button{
+   background-color: #BF9C7D  ; 
+   margin-top: 20px;
+   border:1px solid #fff;
+   padding: 7px 20px;
+}
+
+a{
+    color: #ffffff;
+    font-weight: 450;
+    text-decoration: none;
+    
+}

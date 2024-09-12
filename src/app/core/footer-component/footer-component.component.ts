@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-footer-component',
+  templateUrl: './footer-component.component.html',
+  styleUrl: './footer-component.component.css'
+})
+export class FooterComponentComponent {
+
+  currentYear: number;
+
+  constructor(){
+    this.currentYear = new Date().getFullYear();
+  }
+}

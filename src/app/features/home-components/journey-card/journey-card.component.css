@@ -1,0 +1,34 @@
+.journey-card{
+    width: 100%; 
+    height: 450px;
+    background-color: none;
+    display: flex;
+    margin: 5px auto;
+    justify-content: space-between;
+
+}
+.alternative-card{
+    display: flex;
+    
+}
+.alternative-card p{
+    float: right;
+    color: green;
+}
+
+.image-box{
+    width: 37% ;
+    height: 100%;
+    background: green;
+}
+.content{
+    width: 63%;
+    height: 100%;
+    margin-left: 5px;
+}
+
+.image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

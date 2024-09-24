@@ -1,0 +1,104 @@
+.leader-info{
+    background-color: #fff;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border: 1px solid #ED9B35;
+    
+    width: 400px;
+    height: 92%;
+    margin:45px auto;
+    padding: 40px 20px;
+}
+
+.image-box{
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    margin: 0 auto;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 11px 12px 45px -19px rgba(0,0,0,0.75);
+
+}
+
+.image-box img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+#leader-name{
+    margin: 15px 0 5px 0;
+    text-align: center;
+    color: #333;
+    font-family: "Abel", sans-serif;
+}
+
+#profession{
+    text-align: center;
+    color: #5f5f5f;
+}
+
+.contact-details{
+    width: 90%;
+    margin: 15px auto 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-details a{
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.contact-details img{
+    width: 18px;
+    height: 18px;
+    
+}
+
+#youtube{
+    width: 20px;
+    height: 20px;
+}
+
+.fa-youtube-play{
+    color: red;
+    font-size: 25px;
+}
+
+.fa-facebook-square{
+    color: rgb(14, 15, 95);
+}
+
+.fa-whatsapp{
+    color: green;
+}
+
+.about-leader{
+    margin-top: 20px;
+}
+
+.liner{
+    content: "";
+    width: 60px;
+    height: 2px ;
+    background-color: #ED9B35;
+    margin: 10px auto;
+}
+
+#leader-paragraph{
+    color:#333;
+    text-align: justify;
+}
+
+#leader-paragraph::first-letter{
+    color: #554430;
+    font-weight: bold;
+    font-size: 70px;
+    float: left; /* Makes the first letter float to the left */
+    line-height: 1; /* Adjusts the line-height to align better with the text */
+    margin-right: 10px; /* Adds some spacing between the letter and the paragraph */
+    margin-top: 5px; /* Adjusts the vertical alignment of the letter */
+}

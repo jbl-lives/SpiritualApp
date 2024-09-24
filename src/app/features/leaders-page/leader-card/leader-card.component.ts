@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class LeaderCardComponent {
  @Input() leaderName:string = "Strong Sangoma"
+ @Input() leaderImage:string = "";
 }

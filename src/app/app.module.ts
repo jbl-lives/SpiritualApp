@@ -21,6 +21,8 @@ import { ItemInfoCardComponent } from './shared/item-info-card/item-info-card.co
 import { PlacesCardComponent } from './features/tools-component/places-card/places-card.component';
 import { LeadersPageComponent } from './features/leaders-page/leaders-page.component';
 import { LeaderCardComponent } from './features/leaders-page/leader-card/leader-card.component';
+import { LeadersInfoComponent } from './features/leaders-page/leaders-info/leaders-info.component';
+import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { LeaderCardComponent } from './features/leaders-page/leader-card/leader-
     ItemInfoCardComponent,
     PlacesCardComponent,
     LeadersPageComponent,
-    LeaderCardComponent
+    LeaderCardComponent,
+    LeadersInfoComponent,
+    GiftsPageComponent
   ],
   imports: [
     BrowserModule,

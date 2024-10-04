@@ -1,0 +1,35 @@
+.gift{
+    width: 320px;
+    height: 300px;
+    position: relative;
+    margin: 3px;
+    border: 1px solid #BF9C7D;
+    
+}
+img{
+    position: absolute;
+    z-index: 0;
+}
+
+.tag{
+    background-color: #333;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+h4{
+    font-size: 20px;
+}
+.liner{
+    width: 70px;
+    height: 2px;
+    background-color: #ED9B35;
+    margin: 10px 0 10px 0;
+}
+p{
+    color: #b2b3b4;
+}

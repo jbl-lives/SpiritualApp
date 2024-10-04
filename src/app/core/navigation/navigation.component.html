@@ -22,13 +22,25 @@
     </div>
     <nav>
         <ul>
-            <li> <a routerLink="/">Home</a></li>
-            <li><a href="">Gifts</a></li>
-            <li><a routerLink="leaders">Leaders</a></li>
-            <li><a routerLink="tools">Tools</a></li>
+            <li> 
+                <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            </li>
+            <li>
+                <a routerLink="/gifts" routerLinkActive="active-link">Gifts</a>
+            </li>
+            <li>
+                <a routerLink="/leaders" routerLinkActive="active-link">Leaders</a>
+            </li>
+            <li>
+                <a routerLink="/tools" routerLinkActive="active-link">Tools</a>
+            </li>
+            <li>
+                <a routerLink="/about" routerLinkActive="active-link">About</a>
+            </li>
         </ul>
         <a href="" class="dream-btn">Dream Interpreter</a>
     </nav>
+    
     
 </header>
 

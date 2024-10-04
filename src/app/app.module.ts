@@ -23,6 +23,8 @@ import { LeadersPageComponent } from './features/leaders-page/leaders-page.compo
 import { LeaderCardComponent } from './features/leaders-page/leader-card/leader-card.component';
 import { LeadersInfoComponent } from './features/leaders-page/leaders-info/leaders-info.component';
 import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
+import { GiftComponent } from './features/gifts-page/gift/gift.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
     LeadersPageComponent,
     LeaderCardComponent,
     LeadersInfoComponent,
-    GiftsPageComponent
+    GiftsPageComponent,
+    GiftComponent,
+
   ],
   imports: [
     BrowserModule,

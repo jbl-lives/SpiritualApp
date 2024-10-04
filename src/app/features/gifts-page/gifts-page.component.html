@@ -1,1 +1,31 @@
-<p>gifts-page works!</p>
+<app-navigation></app-navigation>
+<app-intro-banner
+    title="Types of Gifts" 
+    message="These are some of the popular leaders in the African Spirituality 
+    pushing boundries and educating the masses about this diverse way of life. "
+    background="#fff"
+    [linerBackground]="'#ED9B35'"
+    [showLiner]="true"
+> 
+</app-intro-banner>
+<section class="gifts-section">
+    
+    <app-gift 
+        giftImage="../../../assets/images/gifts/inyanga.jpg"
+        giftTitle="Traditional Healer"  
+    ></app-gift>
+
+    <app-gift
+        giftImage="../../../assets/images/gifts/prophetic.jpg"
+        giftTitle="Prophet" 
+    ></app-gift>
+    <app-gift
+        giftImage="../../../assets/images/gifts/medium.jpg"
+        giftTitle="Medium" 
+    ></app-gift>
+    <app-gift
+        giftImage="../../../assets/images/gifts/seer.jpg"
+        giftTitle="Seer/Teacher" 
+    ></app-gift>
+</section>
+

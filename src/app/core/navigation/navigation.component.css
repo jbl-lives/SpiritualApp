@@ -96,8 +96,11 @@ nav ul li a.active-link::after {
     margin-top: 13px;
     top: 0;
     color: #f7f7f7;
-    
-    
-    
+    text-decoration: none;
+    border: 1px solid #fff;  
+}
+
+.dream-btn:hover{
+    background-color: #E5AC65;
 }
 

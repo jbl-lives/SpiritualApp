@@ -16,8 +16,11 @@
     align-items: center;
     justify-content: center;
     margin: 2px;
+    overflow: hidden; 
     
 }
+
+
 
 .tools-box::after{
     content: "";
@@ -46,4 +49,17 @@
     z-index: 2;
     font-size: 1rem;
     background-color: #575756;
+}
+
+.tools-box:hover a{
+    background-color: #BF9C7d;
+    border: 1px solid #fff;
+}
+.tools-box:hover{
+    border: 1px solid #BF9C7d;
+}
+
+.tools-box:hover::after {
+    background-color: rgba(245, 245, 245, 0.8); /* Change to your desired background on hover */
+    
 }

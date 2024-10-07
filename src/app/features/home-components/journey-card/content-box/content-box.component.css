@@ -9,22 +9,27 @@
 .separator{
     content: "";
     width: 70px;
-    height: 1px;
-    background-color: #979393;
-    margin: 15px 0;
+    height: 2px;
+    background-color: #c4c0c0;
+    margin: 20px 0;
 }
 
 p{
 
-    margin: 30px 0 60px 0;
+    margin: 20px 0 60px 0;
     width: 65%;
 }
 
 .content-btn{
     text-decoration: none;
-    
     color: #fff;
     border: 2px solid #fff;
     padding: 5px 20px;
     top: 50px;
+}
+
+.content-btn:hover{
+    background-color: #fff;
+    color:#14181C;
+    
 }

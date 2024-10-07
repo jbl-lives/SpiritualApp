@@ -44,3 +44,22 @@
     background-color: aliceblue;
     margin: 15px 0;
 }
+
+.abt-btn{
+    display: inline-block;
+    background-color: #BF9C7d;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2; 
+    position: relative;
+    
+}
+
+.abt-btn:hover{
+    background-color: #E5AC66;
+}
+

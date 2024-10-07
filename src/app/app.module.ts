@@ -24,6 +24,7 @@ import { LeaderCardComponent } from './features/leaders-page/leader-card/leader-
 import { LeadersInfoComponent } from './features/leaders-page/leaders-info/leaders-info.component';
 import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
 import { GiftComponent } from './features/gifts-page/gift/gift.component';
+import { InformationPageComponent } from './features/information-page/information-page.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { GiftComponent } from './features/gifts-page/gift/gift.component';
     LeadersInfoComponent,
     GiftsPageComponent,
     GiftComponent,
+    InformationPageComponent,
 
   ],
   imports: [

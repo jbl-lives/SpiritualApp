@@ -49,6 +49,7 @@ button{
     width: 150px;
     float: right;
     font-size: 0.9rem;
+    border: 1px solid #abacad
 }
 
 .side-bar{

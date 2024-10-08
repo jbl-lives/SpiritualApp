@@ -1,0 +1,33 @@
+.tools-page-section{
+  
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+   
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar main";
+} 
+
+app-navigation{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: orange;
+    grid-area: navbar;
+}
+
+app-side-nav{
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main{
+    background-color: #dfdddd;
+    padding:20px  20px;
+    grid-area: main;
+}
+

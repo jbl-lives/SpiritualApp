@@ -8,7 +8,7 @@ import { Component,Input } from '@angular/core';
 export class ItemInfoCardComponent {
 
   @Input() itemTitle:string ="Rivers";
-  @Input() itemMessage:string ="Money in candles"
+  @Input() itemMessage:string ="Lorem ipsum dolor sit amet consectetur adipisicing elit.  "
   @Input() itembackground:string = "";
   @Input() itemBorder:string = "";
   @Input() itemLink:string = ""

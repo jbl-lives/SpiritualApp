@@ -25,6 +25,8 @@ import { LeadersInfoComponent } from './features/leaders-page/leaders-info/leade
 import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
 import { GiftComponent } from './features/gifts-page/gift/gift.component';
 import { InformationPageComponent } from './features/information-page/information-page.component';
+import { ToolsPageComponent } from './features/pages/tools-page/tools-page.component';
+import { SideNavComponent } from './core/side-nav/side-nav.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { InformationPageComponent } from './features/information-page/informatio
     GiftsPageComponent,
     GiftComponent,
     InformationPageComponent,
+    ToolsPageComponent,
+    SideNavComponent,
 
   ],
   imports: [

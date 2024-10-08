@@ -1,16 +1,16 @@
 .item-card{
-    
     width: 100%;
-    height: 450px;
     background-color: none;
     display: flex;
-    margin: 5px auto;
-    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .image-box{
-    width: 37% ;
-    height: 100%;
+    width: 22%;
+    height: 200px;
     background: rgb(44, 46, 44);
 }
 .liner{
@@ -27,8 +27,9 @@
     object-fit: cover;
 }
 .content-box{
-    width: 63%;
+    width: 78%;
     height: 100%;
     margin-left: 5px;
-    padding: 7cqb 30px;
+    padding: 5px 10px;
+    
 }

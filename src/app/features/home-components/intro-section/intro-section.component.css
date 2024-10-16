@@ -1,0 +1,72 @@
+.intro-section{
+    width: 100%;
+    background-image: url("../../../../assets/images/intro-landing-pic.jpg");
+    background-size: cover;
+    color: #fff;
+    padding: 80px 100px;
+    margin-bottom: 30px;
+    
+
+}
+
+.intro-box{
+    width: 100%;
+    background-color: #0E1317;
+    padding: 80px;
+    position: relative;
+}
+
+.intro-box p{
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.intro-box::before, .intro-box::after{
+    content: "";    
+    position: absolute;
+    
+}
+
+.intro-box::before{
+    width: 50px;
+    height: 50px;
+    background: #E5AC66;
+    right: -25px;
+    top: -25px;
+}
+
+.intro-box::after{
+    border: 1px solid #E5AC66;
+    width: 95%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.liner{
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: aliceblue;
+    margin: 15px 0;
+}
+
+.abt-btn{
+    display: inline-block;
+    background-color: #BF9C7d;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2; 
+    position: relative;
+    
+}
+
+.abt-btn:hover{
+    background-color: #E5AC66;
+}
+

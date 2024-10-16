@@ -15,18 +15,20 @@ import { AboutUsComponent } from './features/home-components/about-us/about-us.c
 import { ContactUsComponent } from './features/home-components/contact-us/contact-us.component';
 import { FooterComponentComponent } from './core/footer-component/footer-component.component';
 import { LeadersComponentComponent } from './features/home-components/leaders-component/leaders-component.component';
-import { ToolsComponentComponent } from './features/tools-component/tools-component.component';
-import { ToolCardComponent } from './features/tools-component/tool-card/tool-card.component';
+// import { ToolsComponentComponent } from './features/tools-component/tools-component.component';
+// import { ToolCardComponent } from './features/tools-component/tool-card/tool-card.component';
 import { ItemInfoCardComponent } from './shared/item-info-card/item-info-card.component';
-import { PlacesCardComponent } from './features/tools-component/places-card/places-card.component';
-import { LeadersPageComponent } from './features/leaders-page/leaders-page.component';
-import { LeaderCardComponent } from './features/leaders-page/leader-card/leader-card.component';
-import { LeadersInfoComponent } from './features/leaders-page/leaders-info/leaders-info.component';
-import { GiftsPageComponent } from './features/gifts-page/gifts-page.component';
-import { GiftComponent } from './features/gifts-page/gift/gift.component';
+// import { PlacesCardComponent } from './features/tools-component/places-card/places-card.component';
+import { LeadersPageComponent } from './features/pages/leaders-page/leaders-page.component';
+import { LeaderCardComponent } from './features/pages/leaders-page/leader-card/leader-card.component';
+import { LeadersInfoComponent } from './features/pages/leaders-page/leaders-info/leaders-info.component';
+import { GiftsPageComponent } from './features/pages/gifts-page/gifts-page.component';
 import { InformationPageComponent } from './features/information-page/information-page.component';
 import { ToolsPageComponent } from './features/pages/tools-page/tools-page.component';
 import { SideNavComponent } from './core/side-nav/side-nav.component';
+import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.component';
+import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
+import { AuthenticationComponent } from './features/authentication/authentication.component';
 
 
 @NgModule({
@@ -43,19 +45,21 @@ import { SideNavComponent } from './core/side-nav/side-nav.component';
     AboutUsComponent,  
     ContactUsComponent,
     FooterComponentComponent,
-    ToolsComponentComponent,
+    // ToolsComponentComponent,
     LeadersComponentComponent,
-    ToolCardComponent,
+    // ToolCardComponent,
     ItemInfoCardComponent,
-    PlacesCardComponent,
+    // PlacesCardComponent,
     LeadersPageComponent,
     LeaderCardComponent,
     LeadersInfoComponent,
     GiftsPageComponent,
-    GiftComponent,
     InformationPageComponent,
     ToolsPageComponent,
     SideNavComponent,
+    MainInfoCardComponent,
+    IntroSectionComponent,
+    AuthenticationComponent,
 
   ],
   imports: [

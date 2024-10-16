@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './gifts-page.component.css'
 })
 export class GiftsPageComponent {
-
+  giftItems: string[] = ['Traditional Healer', 'Prophetic', 'Medium', 'Seer'];
 }

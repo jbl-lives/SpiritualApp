@@ -1,0 +1,23 @@
+.intro-information{
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #b9b8b8;
+    height: 120px;
+}
+
+
+
+.intro-information p::first-letter{
+    color:#BF9C7D;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+	font-family: "Montagu Slab", serif;
+	font-size: 7rem;
+	line-height: 1;
+	
+	margin-right: 0.5rem;
+    display:inline
+
+	
+}

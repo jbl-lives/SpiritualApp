@@ -1,14 +1,13 @@
-.tools-page-section{
+.leaders-section{
   
     width: 100%;
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr auto;
-   
     grid-template-areas: 
     "navbar navbar"
     "sidebar main";
-} 
+}
 
 app-navigation{
     position: sticky;
@@ -26,9 +25,12 @@ app-side-nav{
 }
 
 .main{
-    background-color: #dfdddd;
+    background-color: #f5f0f0;
     padding:20px  20px;
     grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+    justify-items: right;
 }
-
-

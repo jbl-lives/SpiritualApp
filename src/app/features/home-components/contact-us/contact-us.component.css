@@ -15,7 +15,7 @@
     content: "";
     width: 65px;
     height: 2px;
-    background-color: #14181C;
+    background-color: #E5AC66;
     margin: 15px 0;
     
 }
@@ -25,15 +25,27 @@
 }
 
 .contact-form input, textarea{
-    width: 100%;
-    
-    background-color: #ECECEC;
-    border: none;
-    border-left: 3px solid #BF9C7D;
-    margin-bottom: 30px;
-    padding: 13px 10px;
+    width: 100%; 
+    /* background-color: #d8d5d5; */
+    border: 2px solid #abacad;
+    /* border-left: 3px solid #BF9C7D; */
+    margin-bottom: 20px;
+    padding: 18px 10px;
     font-size: 0.9rem;
+    
+    /* box-shadow: -7px 5px 22px -4px rgba(0, 0, 0, 0.75); */
 }
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none; /* Remove default outline */
+    border: 2px solid #BF9C7D; /* Change border color to highlight */
+    box-shadow: 0 0 10px rgba(191, 156, 125, 0.7); /* Add a subtle shadow effect */
+    background-color: #f5f3f3; /* Optional: Lighten background for focus */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+
 
 textarea{
     height: 100px;
@@ -41,15 +53,21 @@ textarea{
 }
 
 button{
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 0;
-    background-color:#BF9C7D ;
+    background-color: #171f25;
     color: #fff;
     width: 150px;
     float: right;
     font-size: 0.9rem;
-    border: 1px solid #abacad
+    border: 2px solid #BF9C7D ;
+}
+
+button:hover {
+    background-color: #BF9C7D; /* Corrected */
+    color: #fff; /* Optionally, you can change the text color too */
+    cursor: pointer;
 }
 
 .side-bar{

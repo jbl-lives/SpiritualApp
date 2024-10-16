@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToolsComponentComponent } from './tools-component.component';
+import { IntroSectionComponent } from './intro-section.component';
 
-describe('ToolsComponentComponent', () => {
-  let component: ToolsComponentComponent;
-  let fixture: ComponentFixture<ToolsComponentComponent>;
+describe('IntroSectionComponent', () => {
+  let component: IntroSectionComponent;
+  let fixture: ComponentFixture<IntroSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ToolsComponentComponent]
+      declarations: [IntroSectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ToolsComponentComponent);
+    fixture = TestBed.createComponent(IntroSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

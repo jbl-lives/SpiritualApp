@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-leaders-page',
@@ -6,5 +6,5 @@ import { Component,Input } from '@angular/core';
   styleUrl: './leaders-page.component.css'
 })
 export class LeadersPageComponent {
- 
+  leadersCategories: string[] = ['Traditional Healer', 'Prophetic', 'Medium', 'Seer'];
 }

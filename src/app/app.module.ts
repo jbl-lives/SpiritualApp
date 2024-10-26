@@ -29,7 +29,7 @@ import { SideNavComponent } from './core/side-nav/side-nav.component';
 import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.component';
 import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
 import { AuthModule } from './auth/auth.module';
-import { ButtonComponent } from './core/button/button.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -61,15 +61,17 @@ import { ButtonComponent } from './core/button/button.component';
     SideNavComponent,
     MainInfoCardComponent,
     IntroSectionComponent,
-    ButtonComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule, 
-    AuthModule
+    AuthModule,
+    SharedModule 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

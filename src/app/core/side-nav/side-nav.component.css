@@ -5,6 +5,7 @@ aside{
     top: 129px;
     z-index: 100;
     height: calc(100vh - 129px);
+    background-color: purple;
     
 }
 

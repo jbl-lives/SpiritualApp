@@ -9,6 +9,125 @@
 
 .register-container{
     background-color: #fff;
-    width: 90%;
-    padding: 30px;
+    width: 75%;
+    padding: 50px;
 }
+
+.form-container {
+    /* background-color: aquamarine; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px; /* Adjust to control vertical spacing */
+    align-items: start;
+}
+
+
+.form-group {
+    /* border: 2px solid green; */
+    padding: 0;
+    margin: 0;
+}
+
+.form-group input, .form-group svg {
+    padding: 0;
+    margin: 0;
+}
+
+.form-group input{
+    padding: 10px;
+}
+
+
+
+.input1 { grid-area: 1 / 1 / 2 / 2; }
+.input2 { grid-area: 1 / 2 / 2 / 3; }
+.input3 { grid-area: 2 / 1 / 3 / 2; }
+.input4 { grid-area: 2 / 2 / 3 / 3; }
+.input5 { grid-area: 3 / 1 / 4 / 2; }
+.input6 { grid-area: 3 / 2 / 4 / 3; }
+.input7 { grid-area: 4 / 1 / 5 / 2; }
+.input8 { grid-area: 4 / 2 / 5 / 3; } 
+
+
+.full-width-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+  }
+  
+  .full-width-button app-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .material-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #777777;
+    cursor: pointer;
+  }
+
+  .material-checkbox a{
+    text-decoration: underline;
+    color: #171f25;
+  }
+  
+  .material-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    border: 2px solid #454B00;
+    border-radius: 0w;
+    transition: all 0.3s;
+  }
+  
+  .material-checkbox input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #2F3300;
+    border-color: #454B00;
+  }
+  
+  .material-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .material-checkbox input[type="checkbox"]:focus ~ .checkmark {
+    box-shadow: 0 0 0 2px #dfec5065;
+  }
+  
+  .material-checkbox:hover input[type="checkbox"] ~ .checkmark {
+    border-color: #C3CF34;
+  }
+  
+  .material-checkbox input[type="checkbox"]:disabled ~ .checkmark {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .material-checkbox input[type="checkbox"]:disabled ~ .checkmark:hover {
+    border-color: #4d4d4d;
+  }
+  

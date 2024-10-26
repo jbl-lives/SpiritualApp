@@ -59,6 +59,12 @@
     
 }
 
+button {
+    margin-top: 30px;
+    position: relative;
+    z-index: 3;
+}
+
 .abt-btn:hover{
     background-color: #E5AC66;
 }

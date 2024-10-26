@@ -49,6 +49,13 @@
     z-index: 2;
     font-size: 1rem;
     background-color: #575756;
+    background-color: #171f25;
+    border: 2px solid #BF9C7D ;
+}
+
+app-button{
+    margin-top: 10px;
+    z-index: 3;
 }
 
 .tools-box:hover a{

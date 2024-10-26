@@ -3,9 +3,7 @@
 }
 
 
-a {
-    text-decoration: none;
-}
+
 .gift-box{
     width: 100%;
     display: flex;
@@ -28,10 +26,7 @@ a {
     transform: scale(1.1) rotate(5deg);
 }
 
-.gift-card:hover .gift-content{
-    background: #BF9c7D;
-    border-top:3px solid #fff
-}
+
 
 .gift-card img{
     width: 100%;
@@ -39,7 +34,7 @@ a {
     transition: transform 0.5s ease;
 }
 
-.gift-content{
+.gift-card .gift-content{
     background: #272d32;
     padding: 15px;
     color: #fff;
@@ -48,7 +43,14 @@ a {
     width: 100%;
     /* margin-top: -5px; */
     border-top: 3px solid #BF9c7D;
+    transition: transform 0.5s ease;
 }
+
+.gift-card:hover .gift-content{
+    background: #BF9c7D;
+    border-top:3px solid #fff
+}
+
 
 .credit-container{
     width: 100%;
@@ -67,14 +69,10 @@ a {
     border: 1px solid #fff;
 }
 
-.credit-container a:hover{
-    background-color: #E5AC65;
-}
+
 .credit{
-    
     display: flex;
     align-items: center;
-    
 }
 
 .credit p{

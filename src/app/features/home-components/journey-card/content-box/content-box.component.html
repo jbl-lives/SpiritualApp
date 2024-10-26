@@ -1,8 +1,22 @@
 <div class="content-box" [ngStyle]="{'background-color' : background}" >
-    <h3> {{title}}</h3>
-    <div class="separator"></div>
-    <p>{{message}}</p>
+    <div class="content">
+        <h3> {{title}}</h3>
+        <div class="separator"></div>
+        <p>{{message}}</p>
+        
+        <!-- <a href="{{link}}" class="content-btn">Continue</a> -->
+        <!-- <button [routerLink]="link" >Read More</button> -->
+        <app-button
+            buttonText="Read More"
+            color="#313f48"
+            backgroundColor="#ffffff"
+            borderColor="#b8b5b5"
+            hoverBackgroundColor="#bf9c7d"
+            hoverColor="#ffffff"
+        />
+      
+      
+    </div>
     
-    <a href="{{link}}" class="content-btn">Continue</a>
 </div>
 

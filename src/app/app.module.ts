@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { LandingPageComponent } from './features/home-components/landing-page/landing-page.component';
@@ -15,10 +16,9 @@ import { AboutUsComponent } from './features/home-components/about-us/about-us.c
 import { ContactUsComponent } from './features/home-components/contact-us/contact-us.component';
 import { FooterComponentComponent } from './core/footer-component/footer-component.component';
 import { LeadersComponentComponent } from './features/home-components/leaders-component/leaders-component.component';
-// import { ToolsComponentComponent } from './features/tools-component/tools-component.component';
-// import { ToolCardComponent } from './features/tools-component/tool-card/tool-card.component';
+
 import { ItemInfoCardComponent } from './shared/item-info-card/item-info-card.component';
-// import { PlacesCardComponent } from './features/tools-component/places-card/places-card.component';
+
 import { LeadersPageComponent } from './features/pages/leaders-page/leaders-page.component';
 import { LeaderCardComponent } from './features/pages/leaders-page/leader-card/leader-card.component';
 import { LeadersInfoComponent } from './features/pages/leaders-page/leaders-info/leaders-info.component';
@@ -28,7 +28,9 @@ import { ToolsPageComponent } from './features/pages/tools-page/tools-page.compo
 import { SideNavComponent } from './core/side-nav/side-nav.component';
 import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.component';
 import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
-import { AuthenticationComponent } from './features/authentication/authentication.component';
+import { AuthModule } from './auth/auth.module';
+import { ButtonComponent } from './core/button/button.component';
+
 
 
 @NgModule({
@@ -45,11 +47,11 @@ import { AuthenticationComponent } from './features/authentication/authenticatio
     AboutUsComponent,  
     ContactUsComponent,
     FooterComponentComponent,
-    // ToolsComponentComponent,
+    
     LeadersComponentComponent,
-    // ToolCardComponent,
+  
     ItemInfoCardComponent,
-    // PlacesCardComponent,
+    
     LeadersPageComponent,
     LeaderCardComponent,
     LeadersInfoComponent,
@@ -59,12 +61,14 @@ import { AuthenticationComponent } from './features/authentication/authenticatio
     SideNavComponent,
     MainInfoCardComponent,
     IntroSectionComponent,
-    AuthenticationComponent,
-
+    ButtonComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule, 
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

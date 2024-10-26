@@ -1,16 +1,53 @@
 <section class="contact-section">
-    <form action="" method="post" class="contact-form">
+    <form  class="contact-form">
         <h3>Contact Us</h3>
         <div class="liner"></div>
-        <p>Feel free to contact us anytime we will 
-            get back to you as soon as we can
-        </p>
+        <p>Feel free to contact us anytime. We will get back to you as soon as we can.</p>
+    
+        <div class="form-group">
+            <div class="icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+            </div> 
+            <input  type="text" id="username" class="form-control" placeholder="Name" required name="username" >
+        </div>
 
-        <input type="text" name="" id="name" placeholder="Name">
-        <input type="email" name="" id="email" placeholder="Email">
-        <textarea name="" id="" placeholder="Message"></textarea>
-        <button type="submit">Send</button>
+        <div class="form-group">
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+            </div> 
+            <input  type="email" id="email" class="form-control" placeholder="Email" required name="email" >
+        </div>
+        <!-- <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            <small *ngIf="contactForm.get('name')?.errors?.required">Name is required.</small>
+            <small *ngIf="contactForm.get('name')?.errors?.minlength">Name must be at least 3 characters long.</small>
+        </div> -->
+    
+        
+        <!-- <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            <small *ngIf="contactForm.get('email')?.errors?.required">Email is required.</small>
+            <small *ngIf="contactForm.get('email')?.errors?.email">Please enter a valid email.</small>
+        </div> -->
+    
+        <textarea formControlName="message" placeholder="Message"></textarea>
+        <!-- <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            <small *ngIf="contactForm.get('message')?.errors?.required">Message is required.</small>
+            <small *ngIf="contactForm.get('message')?.errors?.minlength">Message must be at least 10 characters long.</small>
+        </div> -->
+    
+        <!-- <button type="submit" >Send</button> -->
+        <div class="full-width-button">
+            <app-button 
+                link="/register-page"  
+                buttonText="Start Journey"
+                hoverBackgroundColor="#bf9c7d"
+                width="100%"
+            ></app-button>
+
+        </div>
+        
+        
     </form>
+    
     
     <div class="side-bar"></div>
 

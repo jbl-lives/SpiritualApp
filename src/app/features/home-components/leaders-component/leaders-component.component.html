@@ -9,7 +9,7 @@
     </app-intro-banner>
 
     <div class="leaders-list">
-        <div class="leader-box">
+        <div class="leader-box" [routerLink]="'/leaders-page'">
             <div class="pic-box">
                 <img src="../../../../assets/images/credo-mtwa-red-cloak_0.jpg" alt="" srcset="">
             </div>
@@ -45,6 +45,14 @@
         </div>
     </div>
 
-    <a href="" class="leaders-btn">View All Leaders</a>
+    <!-- <a href="" class="leaders-btn">View All Leaders</a> -->
+    <!-- <button [routerLink]="'/leaders-page'">View All Leaders</button> -->
+    <app-button 
+        link="/leaders-page"  
+        buttonText="View All Leaders" 
+        backgroundColor="#bf9c7d"
+        borderColor="#7a7c7e"
+        hoverBackgroundColor="#313f48"
+    />
 </section>
 

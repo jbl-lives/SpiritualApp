@@ -1,0 +1,92 @@
+.login-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    width: 30rem;
+    /* background: rgb(191,156,125);
+    background: linear-gradient(107deg, rgba(191,156,125,1) 0%, rgba(227,214,197,1) 52%, rgba(247,247,247,1) 100%); */
+    background-color: #fff;
+    padding: 50px 50px; 
+    border: 1px solid #BF9C7D;
+}
+
+h3{
+    margin: 30px auto;
+    color: #301f1a;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#liner{
+    width: 50px;
+    margin: -15px 0 10px 0;
+}
+
+.login-container p{    
+    color: #5a5a5a;
+}
+
+#top-message{
+    margin-bottom: 30px;
+}
+
+
+
+.img-box{
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 30px auto;
+}
+
+
+
+#forgot-password{
+    margin-top: -10px;
+    display: block;
+    float: right;
+}
+
+.register-block {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;  /* Changed to flex-end for better alignment */
+    align-items: center;
+}
+
+#register {
+   
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+
+
+button{
+    background-color: #171f25;
+    display: block;
+    margin: 10px 0 10px 0; 
+    border:1px solid #ffffff;
+    padding: 15px 50px;
+    border: 2px solid #BF9C7D ;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+    
+}
+
+
+input{
+    background-color: #f1ebe3;
+    border: none;
+}
+
+a{
+    text-decoration: underline;
+}

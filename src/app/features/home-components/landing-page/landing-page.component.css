@@ -27,13 +27,17 @@
 .info{
     width:50%;
     height: 100%;
-    background-color: #f8f8f8;
-    padding: 50px;
+    background-color: #f3ebeb;
+    padding: 0 50px;
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 .content{
     width: 60%;
+    height: 100%;
+    
 }
 
 .floating-tools{
@@ -78,23 +82,11 @@
 }
 
 .info p{
-    color: #fff;
     padding-top: 10px;
     color: rgb(32, 33, 34);
+    margin-bottom: 30px;
 }
 
-.start-btn{
-   background-color: #171f25;
-   display: inline-block;
-   margin-top: 20px;
-   border:1px solid #fff;
-   padding: 7px 20px;
-   border: 2px solid #BF9C7D ;
-   text-decoration: none;
-   color: #fff;
-}
-
-.start-btn:hover{
-    background-color: #BF9C7D;
-    
+#landing-btn{
+    margin-top: 30px;
 }

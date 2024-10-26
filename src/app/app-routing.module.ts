@@ -5,6 +5,8 @@ import { LeadersPageComponent } from './features/pages/leaders-page/leaders-page
 import { GiftsPageComponent } from './features/pages/gifts-page/gifts-page.component';
 import { InformationPageComponent } from './features/information-page/information-page.component';
 import { ToolsPageComponent } from './features/pages/tools-page/tools-page.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 
@@ -36,7 +38,16 @@ const routes: Routes = [
     path: "information-page",
     component: InformationPageComponent
   }
-  
+  ,
+  {
+    path: "login-page",
+    component: LoginComponent
+  }
+  ,
+  {
+    path: "register-page",
+    component: RegisterComponent
+  }
 ];
 
 @NgModule({

@@ -16,10 +16,11 @@
     position: relative;
 }
 
-.intro-box p{
-    font-style: italic;
-    font-size: 1.3rem;
-}
+/* .intro-box p{
+    /* font-style: italic;
+    color: #f9f6f3;
+    font-size: 1rem; 
+} */
 
 .intro-box::before, .intro-box::after{
     content: "";    

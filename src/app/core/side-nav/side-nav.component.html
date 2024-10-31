@@ -1,12 +1,18 @@
 <aside>
-    <form action="">
-        <input type="search" id="search" name="query" placeholder="Type here to search">
-        <button type="submit"><img src="../../../assets/icons/search.png" alt="" srcset=""></button>
-    </form>
-    <ul>
-      <a href="" class="side-select-btn" *ngFor="let item of items">
-        <li><p>{{ item }}</p></li>
-      </a> 
-    </ul>
+    <!-- <div class="logo">
+        <div id="logo"></div>
+        <h3>Spiritual Ginger</h3>
+    </div> -->
+  <form action="">
+      <input type="search" id="search" name="query" placeholder="Type here to search">
+      <button type="submit"><img src="../../../assets/icons/search.png" alt=""></button>
+  </form>
+  <ul>  
+      <li class="side-select-btn" *ngFor="let item of items"> 
+          <div class="image-box" [ngStyle]="{'background-color': item.backgroundColor}">
+              <img [src]="item.image" alt="">
+          </div>
+          <p>{{ item.item }}</p>
+      </li> 
+  </ul>
 </aside>
-  

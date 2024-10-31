@@ -7,6 +7,8 @@ import { InformationPageComponent } from './features/information-page/informatio
 import { ToolsPageComponent } from './features/pages/tools-page/tools-page.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
+
 
 
 
@@ -35,8 +37,8 @@ const routes: Routes = [
     component: ToolsPageComponent
   },
   {
-    path: "information-page",
-    component: InformationPageComponent
+    path: "about-page",
+    component: AboutUsPageComponent
   }
   ,
   {

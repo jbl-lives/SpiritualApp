@@ -1,10 +1,13 @@
 header{
-    width: 100%; 
+    width: 100%;
+    height: 5rem; 
     background-color: #0E1317;
     color: #979393;  
-   
+    display: flex;
     top: 0;
     z-index: 100;
+    justify-content: space-between;
+    position: sticky;
 }
 
 .top-bar{
@@ -22,6 +25,7 @@ header{
     
     display: flex;
     align-items: center;
+    color: #dbd8d8;
     
 }
 #logo{
@@ -30,6 +34,7 @@ header{
     background-image: url("../../../assets/images/Logo.png");
     background-position: center;
     background-size: cover;
+    margin-right: 7px;
 }
 .location, .hours{
     display: flex;
@@ -48,10 +53,11 @@ header{
 
 
 nav{
-    width: 100%;
+    
     padding: 20px 0;
     display: flex;    
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     position: relative;
    
 }
@@ -60,6 +66,8 @@ ul{
     display: flex;
     font-size: 14px;   
     width: fit-content;
+    align-items: center;
+    margin-right:  20px;
 }
 
 li{
@@ -111,22 +119,22 @@ nav ul li a.active-link::after {
 }
 
 .dream-btn{
-    position: absolute;
-    right: 0;
+    /* position: absolute; */
+    /* right: 0; */
     padding: 7px 15px;
     background-color: none;
-    margin-top: 13px;
-    top: 0;
+    /* margin-top: 13px; */
+    /* top: 0; */
     color: #BF9C7D;
     text-decoration: none;
     border: 1px solid #BF9C7D;  
 }
 
 .login-btn{
-    position: absolute;
-    left:0;
-    margin-top: 13px;
-    top: 0;
+    /* position: absolute;
+    left:0; */
+    /* margin-top: 13px; */
+    /* top: 0; */
     text-decoration: none;
     font-size: 2rem;
     color: #BF9C7D;

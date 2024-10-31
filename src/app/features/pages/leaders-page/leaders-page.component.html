@@ -1,15 +1,17 @@
 <section class="leaders-section">
-    <app-navigation />
-    <app-side-nav [items]="leadersCategories" />
+    <app-navigation/>
+    <app-side-nav [items]="leaderSideNavItems"></app-side-nav>
 
-    <div class="main">
-         <!-- <img src="../../../../assets/images/leaders/bathini.jpg" alt="" srcset="">          -->
-       
-        <app-leader-card 
-            leaderImage="../../../../assets/images/leaders/credo.jpg"
-            leaderName="Credo Vulamasango Mutwa"
-        />
-        <app-leader-card 
+    <div class="main" >
+        <div class="main">
+            <app-leader-card *ngFor="let leader of leaderInfo" [leader]="leader"></app-leader-card>
+        </div>
+        
+         
+    </div>
+</section>
+<!-- <img src="../../../../assets/images/dineo.png" alt="" srcset=""> -->
+<!-- <app-leader-card 
             leaderImage="../../../../assets/images/leaders/dineo.png"
             leaderName="Credo Vulamasango Mutwa"
         />
@@ -29,14 +31,8 @@
             leaderImage="../../../../assets/images/leaders/gogo-moyo.jpg"
             leaderName="Credo Vulamasango Mutwa"
         />
-        <app-leader-card 
-            leaderImage="../../../../assets/images/leaders/mphowabadimo.jpg"
-            leaderName="Credo Vulamasango Mutwa"
-        />
+       
         <app-leader-card 
             leaderImage="../../../../assets/images/leaders/bathini.jpg"
             leaderName="Credo Vulamasango Mutwa"
-        />
-         
-    </div>
-</section>
+        /> -->

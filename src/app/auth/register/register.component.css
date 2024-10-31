@@ -5,13 +5,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .register-container{
     background-color: #fff;
     width: 75%;
     padding: 50px;
+    padding-bottom: 30px;
 }
+
+.register-container p{
+  margin-bottom: 30px;
+  color: #5a5a5a;
+}
+
+
 
 .form-container {
     /* background-color: aquamarine; */
@@ -64,6 +73,20 @@
     max-width: 100%;
     box-sizing: border-box;
   }
+
+  .login-block{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 20px;
+    
+  }
+
+  .login-block a{
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+
 
 
   .material-checkbox {
@@ -130,4 +153,6 @@
   .material-checkbox input[type="checkbox"]:disabled ~ .checkmark:hover {
     border-color: #4d4d4d;
   }
+
+
   

@@ -1,8 +1,14 @@
 <div class="leader-card">
-        <div class="image-box">
-            <img [src]="leaderImage" alt="" srcset="">
+    <div class="image-box">
+        <img [src]="leader.image" alt="{{leader.name}}">
+    </div>
+    <div class="leader-name">
+        <p>{{ leader.name }}</p>
+        <div class="bottom-liner" [ngStyle]="{'background-color': leader.giftColor}"></div>
+        <div class="go-button" [ngStyle]="{'background-color': leader.giftColor}">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff">
+                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+            </svg>
         </div>
-        <div class="leader-name">
-            <p>{{leaderName}}</p>
-        </div> 
+    </div>
 </div>

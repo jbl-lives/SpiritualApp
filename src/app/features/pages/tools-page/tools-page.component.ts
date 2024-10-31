@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ToolsPageComponent {
 
-  toolsItems: string[] = ['Candles', 'Books', 'Cloths', 'Beverages'];
+  toolsItems = [
+    { item: 'Candles', image: '../../../../assets/icons/candle.png' , backgroundColor :'#313e48'},
+    { item: 'Cloths', image: '../../../../assets/icons/cloths.png' , backgroundColor :'#313e48' },
+    { item: 'Divination Tools', image: '../../../../assets/icons/divination.png' , backgroundColor :'#313e48' },
+    { item: 'Drinks', image: '../../../../assets/icons/water-glass.png', backgroundColor :'#313e48'}
+  ];
 
 }

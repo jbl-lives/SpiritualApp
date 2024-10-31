@@ -30,6 +30,11 @@ import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.co
 import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { Navigation2Component } from './core/navigation-2/navigation-2.component';
+import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
+import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
+import { UserManagementComponent } from './admin/components/user-management/user-management.component';
+import { SettingsComponent } from './admin/components/settings/settings.component';
 
 
 
@@ -47,11 +52,8 @@ import { SharedModule } from './shared/shared.module';
     AboutUsComponent,  
     ContactUsComponent,
     FooterComponentComponent,
-    
     LeadersComponentComponent,
-  
     ItemInfoCardComponent,
-    
     LeadersPageComponent,
     LeaderCardComponent,
     LeadersInfoComponent,
@@ -61,6 +63,11 @@ import { SharedModule } from './shared/shared.module';
     SideNavComponent,
     MainInfoCardComponent,
     IntroSectionComponent,
+    Navigation2Component,
+    AboutUsPageComponent,
+    DashboardComponent,
+    UserManagementComponent,
+    SettingsComponent,
     
     
   ],

@@ -14,8 +14,7 @@ app-navigation{
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: orange;
-    grid-area: navbar;
+    grid-area: navbar;  
 }
 
 app-side-nav{
@@ -27,8 +26,11 @@ app-side-nav{
 
 .main{
     background-color: #dfdddd;
+    /* background-color: #fff; */
     padding:20px  20px;
     grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 

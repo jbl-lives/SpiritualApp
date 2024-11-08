@@ -1,18 +1,18 @@
 <aside>
-    <!-- <div class="logo">
-        <div id="logo"></div>
-        <h3>Spiritual Ginger</h3>
-    </div> -->
-  <form action="">
-      <input type="search" id="search" name="query" placeholder="Type here to search">
-      <button type="submit"><img src="../../../assets/icons/search.png" alt=""></button>
-  </form>
-  <ul>  
-      <li class="side-select-btn" *ngFor="let item of items"> 
-          <div class="image-box" [ngStyle]="{'background-color': item.backgroundColor}">
-              <img [src]="item.image" alt="">
-          </div>
-          <p>{{ item.item }}</p>
-      </li> 
-  </ul>
-</aside>
+    <form *ngIf="showSearch" action="">
+        <input type="search" id="search" name="query" placeholder="Type here to search">
+        <button type="submit"><img src="../../../assets/icons/search.png" alt=""></button>
+    </form>
+    <ul>  
+        <li class="side-select-btn" 
+        *ngFor="let item of items"
+        [ngClass]="{ 'active': selectedCategory === item.item }"
+        (click)="selectCategory(item.item)">
+            <div class="image-box" [ngStyle]="{'background-color': item.backgroundColor}">
+                <img [src]="item.image" alt="">
+            </div>
+            <p>{{ item.item }}</p>
+        </li> 
+    </ul>
+  </aside>
+  

@@ -1,0 +1,45 @@
+<section class="dash-gifts">
+    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+
+    <!-- Templates for each tab's content -->
+    <ng-template #firstTabContent>
+        <div class="submission-side">
+            <h3>Add New Gift</h3>
+            <div class="liner"></div>
+            
+            <form action="">
+                <input type="text" name="giftName" id="gift-name" placeholder="Gift Name">
+                <select name="category" id="categories" form="carform">
+                    <option value="">--Select a category--</option>
+                    <option value="Traditional Healer">Traditional Healer</option>
+                    <option value="Prophetic">Prophetic</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Seer/Teacher">Seer/Teacher</option>
+                </select>
+                
+                <div class="editor-container">
+                    <app-text-editor />
+                </div>
+                <input type="file" id="img" name="img" accept="image/*">
+                <div class="full-width-button">
+                    <app-button 
+                        link="/register-page"  
+                        buttonText="Submit"
+                        hoverBackgroundColor="#bf9c7d"
+                        width="100%"
+                    ></app-button>
+        
+                </div>
+        
+            </form>
+        </div>
+    </ng-template>
+
+    <ng-template #secondTabContent>
+        <p>This is the content for the second tab.</p>
+        <!-- Add components or other content as needed -->
+    </ng-template>
+</section>
+
+
+

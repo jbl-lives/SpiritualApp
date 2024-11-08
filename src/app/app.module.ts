@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './core/navigation/navigation.component';
+
+
+
+import { NavigationComponent } from './core/header/navigation/navigation.component';
 import { LandingPageComponent } from './features/home-components/landing-page/landing-page.component';
 import { IntroBannerComponent } from './shared/intro-banner/intro-banner.component';
 import { JourneyCardComponent } from './features/home-components/journey-card/journey-card.component';
@@ -30,11 +32,17 @@ import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.co
 import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
-import { Navigation2Component } from './core/navigation-2/navigation-2.component';
+
 import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { UserManagementComponent } from './admin/components/user-management/user-management.component';
 import { SettingsComponent } from './admin/components/settings/settings.component';
+import { DashNavigationComponent } from './admin/components/dashboard/dash-navigation/dash-navigation.component';
+import { DashCardComponent } from './admin/components/dashboard/dash-card/dash-card.component';
+import { DashTabComponent } from './admin/components/dashboard/dash-tab/dash-tab.component';
+import { DashGiftsComponent } from './admin/components/dashboard/categories/dash-gifts/dash-gifts.component';
+import { DashToolsComponent } from './admin/components/dashboard/categories/dash-tools/dash-tools.component';
+
 
 
 
@@ -63,12 +71,16 @@ import { SettingsComponent } from './admin/components/settings/settings.componen
     SideNavComponent,
     MainInfoCardComponent,
     IntroSectionComponent,
-    Navigation2Component,
     AboutUsPageComponent,
     DashboardComponent,
     UserManagementComponent,
     SettingsComponent,
-    
+    DashNavigationComponent,
+    DashCardComponent,
+    DashTabComponent,
+    DashGiftsComponent,
+    DashToolsComponent,
+   
     
   ],
   imports: [

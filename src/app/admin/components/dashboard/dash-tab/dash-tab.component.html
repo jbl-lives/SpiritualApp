@@ -1,0 +1,17 @@
+<div class="tabs">
+    <ul>
+        <li *ngFor="let tab of tabItems; let i = index" 
+            [ngClass]="{active: selectedTab === i}"
+            (click)="selectTab(i)">
+            {{tab.label}}
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <ng-container *ngIf="tabContents[selectedTab]">
+            <ng-container *ngTemplateOutlet="tabContents[selectedTab]"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+  

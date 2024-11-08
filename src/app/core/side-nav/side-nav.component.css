@@ -55,12 +55,19 @@ li{
     align-items: center;
     color: #fff;
     padding: 7px;
+    transition: all 0.2s ease-in-out;
     
 }
 
 li:hover{
-    background-color: #333;
+    background-color: #f9f6f3;
+    color: #272D32;
     cursor: pointer;
+}
+
+.active{
+    background-color: #f9f6f3;
+    color: #272D32;
 }
 
 p{
@@ -105,3 +112,4 @@ a{
     background-position: center;
     background-size: cover;
 }
+

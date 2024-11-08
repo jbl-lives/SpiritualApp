@@ -8,6 +8,7 @@ import { ToolsPageComponent } from './features/pages/tools-page/tools-page.compo
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
+import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 
 
 
@@ -50,6 +51,12 @@ const routes: Routes = [
     path: "register-page",
     component: RegisterComponent
   }
+  ,
+  {
+    path: "dashboard-page",
+    component: DashboardComponent
+  },
+
 ];
 
 @NgModule({

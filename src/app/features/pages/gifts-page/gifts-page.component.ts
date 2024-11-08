@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class GiftsPageComponent {
   giftItems = [
-    { item: 'Traditional Healer', image: '../../../../assets/icons/gifts/sangoma-light.png', backgroundColor :'#ab3424' },
-    { item: 'Prophetic', image: '../../../../assets/icons/gifts/prophetic-light.png', backgroundColor :'#005c86'},
-    { item: 'Psychic', image: '../../../../assets/icons/gifts/medium-light.png' , backgroundColor :'#ba5400'},
-    { item: 'Seer', image: '../../../../assets/icons/gifts/seer-light.png' , backgroundColor :'#7a74a7'}
+    {  item: 'Traditional Healer', image: '../../../../assets/icons/gifts/sangoma-light.png', backgroundColor :'#ab3424' },
+    {  item: 'Prophetic', image: '../../../../assets/icons/gifts/prophetic-light.png', backgroundColor :'#005c86'},
+    {  item: 'Psychic', image: '../../../../assets/icons/gifts/medium-light.png' , backgroundColor :'#ba5400'},
+    {  item: 'Seer', image: '../../../../assets/icons/gifts/seer-light.png' , backgroundColor :'#7a74a7'}
   ];
 }

@@ -1,1 +1,31 @@
-<p>dashboard works!</p>
+<div class="dashboard-section">
+    
+    <div class="side-nav">
+        <div class="user-info">
+            <div class="image-box">
+                <img src="../../../../../assets/images/leaders/lloyd.jpg" alt="" srcset="">
+            </div>       
+            <p>{{userName}}</p> <p>{{userSurname}}</p>
+        </div>
+        <app-side-nav 
+            [items]="dashboardItems" 
+            [showSearch]="false"
+             (categorySelected)="onCategorySelected($event)" 
+        />
+        
+    </div>
+    <div class="main">
+        <ng-container [ngSwitch]="selectedCategory">
+    
+            <!-- Gift Section -->
+            <app-dash-gifts  *ngSwitchCase="'Gifts'" />
+            
+            <!-- Tools Section -->
+            <app-dash-tools *ngSwitchCase="'Tools'" />
+            
+            <!-- Default or fallback content -->
+            <p *ngSwitchDefault>Select a category to view details.</p>
+            
+          </ng-container>
+    </div>
+</div>

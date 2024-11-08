@@ -1,0 +1,13 @@
+/* text-editor.component.css */
+.ck-editor {
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+  }
+  
+  .ck-editor__editable {
+    min-height: 200px; /* Set to desired height */
+    max-height: 300px; /* Optional: to limit the editor’s height */
+    /* background-color: #f1ebe3; Matches your input fields' background */
+    overflow-y: auto;
+  }
+  

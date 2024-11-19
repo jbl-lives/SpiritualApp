@@ -42,6 +42,8 @@ import { DashCardComponent } from './admin/components/dashboard/dash-card/dash-c
 import { DashTabComponent } from './admin/components/dashboard/dash-tab/dash-tab.component';
 import { DashGiftsComponent } from './admin/components/dashboard/categories/dash-gifts/dash-gifts.component';
 import { DashToolsComponent } from './admin/components/dashboard/categories/dash-tools/dash-tools.component';
+import { DashLeadersComponent } from './admin/components/dashboard/categories/dash-leaders/dash-leaders.component';
+import { DashUsersComponent } from './admin/components/dashboard/categories/dash-users/dash-users.component';
 
 
 
@@ -80,6 +82,8 @@ import { DashToolsComponent } from './admin/components/dashboard/categories/dash
     DashTabComponent,
     DashGiftsComponent,
     DashToolsComponent,
+    DashLeadersComponent,
+    DashUsersComponent,
    
     
   ],

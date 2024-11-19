@@ -1,14 +1,15 @@
-import { Component, TemplateRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, TemplateRef, ViewChild, AfterViewInit, ChangeDetectorRef  } from '@angular/core';
 
 @Component({
-  selector: 'app-dash-tools',
-  templateUrl: './dash-tools.component.html',
-  styleUrl: './dash-tools.component.css'
+  selector: 'app-dash-leaders',
+  templateUrl: './dash-leaders.component.html',
+  styleUrl: './dash-leaders.component.css'
 })
-export class DashToolsComponent {
+export class DashLeadersComponent {
+
   tabItems = [
-    { id: 0, label: 'Create New Tool' },
-    { id: 1, label: 'View Tools' }
+    { id: 0, label: 'Create New Leader' },
+    { id: 1, label: 'View Leaders' }
   ];
 
   tabContentTemplates: TemplateRef<any>[] = [];
@@ -22,4 +23,5 @@ export class DashToolsComponent {
     this.tabContentTemplates = [this.firstTabContent, this.secondTabContent];
     this.cdr.detectChanges(); // Trigger change detection to avoid ExpressionChangedAfterItHasBeenCheckedError
   }
+
 }

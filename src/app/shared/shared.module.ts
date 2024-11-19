@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
     CommonModule,
     FormsModule,
     RouterModule,
-    CKEditorModule
+    CKEditorModule,
+    EditorModule,
   ],
   exports: [
     TextEditorComponent,

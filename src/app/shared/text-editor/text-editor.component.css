@@ -1,13 +1,25 @@
-/* text-editor.component.css */
-.ck-editor {
-    border: 1px solid #ccc;
-    /* border-radius: 4px; */
+/* Ensure full width and custom height */
+.custom-tinymce .tox-tinymce {
+    width: 100% !important;
+    height: 300px !important;
+    border: 1px solid #ddd !important; /* Customize border */
+    border-radius: 0 !important; /* Remove border-radius */
+    background-color: #f1ebe3; /* Match background color */
   }
   
-  .ck-editor__editable {
-    min-height: 200px; /* Set to desired height */
-    max-height: 300px; /* Optional: to limit the editor’s height */
-    /* background-color: #f1ebe3; Matches your input fields' background */
-    overflow-y: auto;
+  /* Customize toolbar padding and font size */
+  .custom-tinymce .tox .tox-editor-header {
+    padding: 4px !important; /* Adjust toolbar padding */
+    font-size: 14px !important; /* Adjust font size */
+  }
+  
+  /* Remove border-radius from the editable area */
+  .custom-tinymce .tox .tox-edit-area {
+    border-radius: 0 !important;
+  }
+  
+  /* Ensure content area background matches */
+  .custom-tinymce .tox .tox-edit-area__iframe {
+    background-color: #f1ebe3 !important;
   }
   

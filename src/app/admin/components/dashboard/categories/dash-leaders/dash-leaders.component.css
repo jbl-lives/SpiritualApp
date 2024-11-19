@@ -1,0 +1,160 @@
+.submission-side{
+    padding: 20px 30px 30px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+}
+
+input,select{
+    width: 49%;
+}
+
+textarea{
+    height:15rem ;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.full-width-button {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+}
+  
+.full-width-button app-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.editor-container {
+    width: 100%; /* Set width to full or a specific width */
+    height: 20rem; /* Adjust height as needed */
+    background-color: #f1ebe3; /* Background color */
+    padding: 10px; /* Padding to keep visible */
+    margin-bottom: 20px; /* Space below */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+  
+  /* Inner scrollable area */
+.editor-scroll {
+    height: 100%; /* Take full height of the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    box-sizing: border-box;
+}
+
+.social-media{
+    width: 100%;
+    /* background-color: purple; */
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.social-media h3{
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: -20px;
+}
+
+.social-media .checkboxes{
+    width: 80%;
+    display: flex;
+    
+}
+
+.social-media .checkboxes p{
+  color: #171f25;
+}
+
+.social-media .material-checkbox{
+    /* background-color: orange;
+    border-right: 1px solid green; */
+}
+
+.social-media .link-inputs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+    justify-content: space-between;
+}
+
+.social-media input{
+    width: 49%;
+}
+
+.material-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #777777;
+    cursor: pointer;
+    /* background: #2F3300; */
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .material-checkbox a{
+    text-decoration: underline;
+    color: #171f25;
+  }
+  
+  .material-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    border: 2px solid #454B00;
+    border-radius: 0w;
+    transition: all 0.3s;
+  }
+  
+  .material-checkbox input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #2F3300;
+    border-color: #454B00;
+  }
+  
+  .material-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .material-checkbox input[type="checkbox"]:focus ~ .checkmark {
+    box-shadow: 0 0 0 2px #dfec5065;
+  }
+  
+  .material-checkbox:hover input[type="checkbox"] ~ .checkmark {
+    border-color: #C3CF34;
+  }
+  
+  .material-checkbox input[type="checkbox"]:disabled ~ .checkmark {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .material-checkbox input[type="checkbox"]:disabled ~ .checkmark:hover {
+    border-color: #4d4d4d;
+  }
+
+  label{
+    width: 100%;
+  }

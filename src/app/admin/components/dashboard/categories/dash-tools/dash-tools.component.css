@@ -1,0 +1,86 @@
+
+.submission-side{
+    padding: 20px 30px 30px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+input,select{
+    width: 49%;
+}
+
+.full-width-button {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .full-width-button app-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .liner{
+    margin:15px 0 30px 0;
+    
+}
+
+
+  .editor-container {
+    width: 100%; /* Set width to full or a specific width */
+    height: 20rem; /* Adjust height as needed */
+    background-color: #f1ebe3; /* Background color */
+    padding: 10px; /* Padding to keep visible */
+    margin-bottom: 20px; /* Space below */
+    box-sizing: border-box; /* Include padding in height calculation */
+  }
+  
+  /* Inner scrollable area */
+  .editor-scroll {
+    height: 100%; /* Take full height of the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    box-sizing: border-box;
+  }
+
+
+
+.tool-table{
+    width: 100%;
+    padding :30px;
+}
+
+.tool-table table{
+    
+    width: 100%;
+}
+
+thead{
+    width: 100%;
+    background-color: #bf9c7d;
+    padding: 10px;
+    color:#ffff;
+    
+}
+
+thead th{
+    border: 1px solid #fff;
+    padding: 15px 10px;
+    text-align: start;
+    border: 1px solid #cacaca;
+}
+
+tbody td{
+    padding:10px;
+    border: 1px solid #cacaca;
+    color: #686767;
+}
+
+tr:nth-child(even) {
+    background: #f1ebe3;
+  }

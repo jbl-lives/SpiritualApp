@@ -14,12 +14,13 @@
     padding: 10px 20px;
     position: sticky;
     top: 0;
+    color: #fff;
 }
 .tabs ul li:hover{
     cursor: pointer;
 }
 
 .active{
-    background-color: purple;
+    background-color: #b0825f;
     color: #fff;
 }

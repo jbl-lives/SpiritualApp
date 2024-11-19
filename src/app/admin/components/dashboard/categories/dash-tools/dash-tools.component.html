@@ -1,1 +1,66 @@
-<p>dash-tools works!</p>
+<section class="dash-tools">
+    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+
+    <!-- Templates for each tab's content -->
+     <ng-template #firstTabContent>
+        <div class="submission-side">
+            <h3>Add New Tools</h3>
+            <div class="liner"></div>
+            
+            <form action="">
+                <input type="text" name="toolName" id="tool-name" placeholder="Enter Tool Name...">
+                
+                
+                <div class="editor-container">
+                    <div class="editor-scroll">
+                      <app-text-editor></app-text-editor>
+                    </div>
+                  </div>
+                  
+                <input type="file" id="img" name="toolImg" accept="image/*">
+                <div class="full-width-button">
+                    <app-button 
+                        link="/register-page"  
+                        buttonText="Submit"
+                        hoverBackgroundColor="#bf9c7d"
+                        width="100%"
+                    ></app-button>
+        
+                </div>
+        
+            </form>
+        </div>
+    </ng-template>
+
+    <ng-template #secondTabContent>
+       
+        <div class="tool-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool Image</th>
+                        <th>Tool Name</th>
+                        <th>Tool Description</th>
+                     </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                    <td>cell1_1</td>
+                    <td>cell2_1</td>
+                    <td>cell3_1</td>
+                    
+                    </tr>
+                    <tr>
+                    <td>cell1_2</td>
+                    <td>cell2_2</td>
+                    <td>cell3_2</td>
+                    
+                    </tr>
+                    </tbody>            
+            </table>
+        </div>
+        
+    </ng-template> 
+</section>
+
+

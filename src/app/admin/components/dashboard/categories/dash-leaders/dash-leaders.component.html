@@ -1,0 +1,117 @@
+<section class="dash-gifts">
+    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+
+    <!-- Templates for each tab's content -->
+    <ng-template #firstTabContent>
+        <div class="submission-side">
+            <h3>Add New Leader</h3>
+            <div class="liner"></div>
+            
+            <form action="">
+                <input type="text" name="leaderName" id="gift-name" placeholder="Enter Leader Name...">
+                <select name="category" id="categories" form="carform">
+                    <option value="">--Select a gift--</option>
+                    <option value="Traditional Healer">Traditional Healer</option>
+                    <option value="Prophetic">Prophetic</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Seer/Teacher">Seer/Teacher</option>
+                </select>
+                
+                <!-- <div class="editor-container">
+                    <div class="editor-scroll">
+                      <app-text-editor></app-text-editor>
+                    </div>
+                </div> -->
+
+                <textarea name="leaderBio" id="" placeholder="Enter Leader Bio"></textarea>
+
+                <div class="social-media">
+                    <h3>Select a social media link</h3>
+                    <div class="checkboxes form-group">
+                        <label class="material-checkbox">
+                            <input type="checkbox" name="facebookCheck">
+                            <span class="checkmark"></span>
+                            <p>FaceBook</p>
+                        </label>  
+                        
+                        <label class="material-checkbox">
+                            <input type="checkbox" name="youtubeCheck">
+                            <span class="checkmark"></span>
+                            <p>YouTube</p>
+                        </label> 
+                        <label class="material-checkbox">
+                            <input type="checkbox" name="instagramCheck">
+                            <span class="checkmark"></span>
+                            <p>Instagram</p>
+                        </label> 
+                        <label class="material-checkbox">
+                            <input type="checkbox" name="whatsappCheck">
+                            <span class="checkmark"></span>
+                            <p>WhatsApp</p>
+                        </label> 
+                        <label class="material-checkbox">
+                            <input type="checkbox" name="tiktokCheck">
+                            <span class="checkmark"></span>
+                            <p>TikTok</p>
+                        </label> 
+
+                        
+                    </div>
+                    <div class="link-inputs">
+                        <input type="text" name="facebookLink" id="">
+                        <input type="text" name="youtubeLink" id="">
+                        <input type="text" name="instagramLink" id="">
+                        <input type="text" name="tiktokLink" id="">
+                        <input type="text" name="whatsappLink" id="">
+                    </div>
+                </div>
+                  
+                <input type="file" id="img" name="img" accept="image/*">
+                <div class="full-width-button">
+                    <app-button 
+                        link="/register-page"  
+                        buttonText="Submit"
+                        hoverBackgroundColor="#bf9c7d"
+                        width="100%"
+                    ></app-button>
+        
+                </div>
+        
+            </form>
+        </div>
+    </ng-template>
+
+    <ng-template #secondTabContent>
+       
+        <div class="gift-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gift Image</th>
+                        <th>Gift Name</th>
+                        <th>Gift Category</th>
+                        <th>Gift Description</th>
+                     </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                    <td>cell1_1</td>
+                    <td>cell2_1</td>
+                    <td>cell3_1</td>
+                    <td>cell4_1</td>
+                    </tr>
+                    <tr>
+                    <td>cell1_2</td>
+                    <td>cell2_2</td>
+                    <td>cell3_2</td>
+                    <td>cell4_2</td>
+                    </tr>
+                    </tbody>            
+            </table>
+        </div>
+        
+    </ng-template>
+</section>
+
+
+

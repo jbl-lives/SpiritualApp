@@ -8,7 +8,10 @@
             <div class="liner"></div>
             
             <form action="">
-                <input type="text" name="giftName" id="gift-name" placeholder="Gift Name">
+                
+                    
+                <input type="password" placeholder="Password" id="password" class="form-control" required name="password" >
+            
                 <select name="category" id="categories" form="carform">
                     <option value="">--Select a category--</option>
                     <option value="Traditional Healer">Traditional Healer</option>
@@ -18,8 +21,11 @@
                 </select>
                 
                 <div class="editor-container">
-                    <app-text-editor />
-                </div>
+                    <div class="editor-scroll">
+                      <app-text-editor></app-text-editor>
+                    </div>
+                  </div>
+                  
                 <input type="file" id="img" name="img" accept="image/*">
                 <div class="full-width-button">
                     <app-button 
@@ -36,8 +42,34 @@
     </ng-template>
 
     <ng-template #secondTabContent>
-        <p>This is the content for the second tab.</p>
-        <!-- Add components or other content as needed -->
+       
+        <div class="gift-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gift Image</th>
+                        <th>Gift Name</th>
+                        <th>Gift Category</th>
+                        <th>Gift Description</th>
+                     </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                    <td>cell1_1</td>
+                    <td>cell2_1</td>
+                    <td>cell3_1</td>
+                    <td>cell4_1</td>
+                    </tr>
+                    <tr>
+                    <td>cell1_2</td>
+                    <td>cell2_2</td>
+                    <td>cell3_2</td>
+                    <td>cell4_2</td>
+                    </tr>
+                    </tbody>            
+            </table>
+        </div>
+        
     </ng-template>
 </section>
 

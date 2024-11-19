@@ -2,7 +2,7 @@
     padding: 0;
 }
 .submission-side{
-    padding: 30px;
+    padding: 20px 30px 30px;
 }
 p{
     margin-bottom: 15px;
@@ -14,8 +14,12 @@ form{
     
 }
 
-input,select{
+input,select, .form-group{
     width: 49%;
+}
+
+.form-group{
+    background-color: green;
 }
 
 .full-width-button {
@@ -39,12 +43,55 @@ input,select{
     
 }
 
+/* Outer container with padding */
 .editor-container {
-    width: 100%; /* or set specific width */
-    height: 20rem; /* adjust height */
-    background-color: #f1ebe3;
+    width: 100%; /* Set width to full or a specific width */
+    height: 20rem; /* Adjust height as needed */
+    background-color: #f1ebe3; /* Background color */
+    padding: 10px; /* Padding to keep visible */
+    margin-bottom: 20px; /* Space below */
+    box-sizing: border-box; /* Include padding in height calculation */
+  }
+  
+  /* Inner scrollable area */
+  .editor-scroll {
+    height: 100%; /* Take full height of the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    box-sizing: border-box;
+  }
+  
+.gift-table{
+    width: 100%;
+    padding :30px;
+}
+
+.gift-table table{
+    
+    width: 100%;
+}
+
+thead{
+    width: 100%;
+    background-color: #bf9c7d;
     padding: 10px;
-    margin-bottom: 20px;
-    overflow-x: scroll;
+    color:#ffff;
     
 }
+
+thead th{
+    border: 1px solid #fff;
+    padding: 15px 10px;
+    text-align: start;
+    border: 1px solid #cacaca;
+}
+
+tbody td{
+    padding:10px;
+    border: 1px solid #cacaca;
+    color: #686767;
+}
+
+tr:nth-child(even) {
+    background: #f1ebe3;
+  }
+

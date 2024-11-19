@@ -1,6 +1,6 @@
 <section class="register-page">
       <div class="register-container">
-        <form (ngSubmit)="onRegister()" >
+        <form [formGroup]="form" (ngSubmit)="onRegister()" >
             <h3>Register an account</h3>
             <div id="liner"></div>
             <p id="top-message">Welcome back! Please enter your details</p>
@@ -67,10 +67,10 @@
                 <div class="form-group input7">
                     
                     <label class="material-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            <a href="">Terms and Conditions</a>
-                          </label>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <a href="">Terms and Conditions</a>
+                    </label>
                 </div>
                 <div class="form-group input8">
                     
@@ -81,7 +81,6 @@
                             hoverBackgroundColor="#bf9c7d"
                             width="100%"
                         ></app-button>
-
                     </div>
                 </div>
 

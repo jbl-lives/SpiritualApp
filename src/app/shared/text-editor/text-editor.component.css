@@ -1,25 +1,29 @@
-/* Ensure full width and custom height */
-.custom-tinymce .tox-tinymce {
-    width: 100% !important;
-    height: 300px !important;
-    border: 1px solid #ddd !important; /* Customize border */
-    border-radius: 0 !important; /* Remove border-radius */
-    background-color: #f1ebe3; /* Match background color */
-  }
-  
-  /* Customize toolbar padding and font size */
-  .custom-tinymce .tox .tox-editor-header {
-    padding: 4px !important; /* Adjust toolbar padding */
-    font-size: 14px !important; /* Adjust font size */
-  }
-  
-  /* Remove border-radius from the editable area */
-  .custom-tinymce .tox .tox-edit-area {
-    border-radius: 0 !important;
-  }
-  
-  /* Ensure content area background matches */
-  .custom-tinymce .tox .tox-edit-area__iframe {
-    background-color: #f1ebe3 !important;
-  }
-  
+.ql-container {
+  width: 100%; /* Or a specific width */
+  height: auto; /* Or a specific height */
+  min-height: 200px; /* Important: Set a minimum height */
+}
+
+.ql-container {
+  border: 1px solid #ccc;
+}
+
+.ql-toolbar {
+  background-color: #f0f0f0; /* Example: Gray background */
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+.ql-toolbar button {
+  /* Style toolbar buttons */
+  margin-right: 5px;
+}
+
+.ql-editor {
+  padding: 10px;
+}
+
+.ql-container.ql-snow .ql-editor.ql-blank::before {
+  color: #aaa; /* Example: Gray placeholder */
+  font-style: italic;
+  content: "Start typing here..."; /* Example: Customize placeholder text */
+}

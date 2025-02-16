@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -34,5 +34,15 @@ export class ButtonComponent {
   @HostBinding('style.--hover-color') get hColor() {
     return this.hoverColor;
   }
+
+  @Input() isSubmit: boolean | undefined = undefined;
+    @Output() buttonClicked = new EventEmitter<void>(); // Output for custom clicks
+    @Input() disabled: boolean = false; // Add disabled input
+
+    onClick(): void {
+        if (!this.isSubmit) { // Only emit if it's not a submit button
+            this.buttonClicked.emit();
+        }
+    }
 
 }

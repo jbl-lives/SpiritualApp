@@ -1,89 +1,14 @@
 <section class="dash-gifts">
-    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+    <app-dash-tab 
+        [tabItems]="tabItems" 
+        [tabContents]="tabContentTemplates" 
+        [selectedTab]="activeTabIndex"  
+        (tabSelected)="onTabSelected($event)">
+    </app-dash-tab>
 
     <!-- Templates for each tab's content -->
     <ng-template #firstTabContent>
-        <div class="submission-side">
-            <h3>Add New Leader</h3>
-            <div class="liner"></div>
-            
-            <form action="">
-                <input type="text" name="leaderName" id="gift-name" placeholder="Enter Leader Name...">
-                <select name="category" id="categories" form="carform">
-                    <option value="">--Select a gift--</option>
-                    <option value="Traditional Healer">Traditional Healer</option>
-                    <option value="Prophetic">Prophetic</option>
-                    <option value="Psychic">Psychic</option>
-                    <option value="Seer/Teacher">Seer/Teacher</option>
-                </select>
-                
-                <!-- <div class="editor-container">
-                    <div class="editor-scroll">
-                      <app-text-editor></app-text-editor>
-                    </div>
-                </div> -->
-
-                <textarea name="leaderBio" id="" placeholder="Enter Leader Bio"></textarea>
-
-                <div class="social-media">
-                    <h3>Select a social media link</h3>
-                    <div class="checkboxes form-group">
-                        <label class="material-checkbox">
-                            <input type="checkbox" name="facebookCheck">
-                            <span class="checkmark"></span>
-                            <p>FaceBook</p>
-                        </label>  
-                        
-                        <label class="material-checkbox">
-                            <input type="checkbox" name="youtubeCheck">
-                            <span class="checkmark"></span>
-                            <p>YouTube</p>
-                        </label> 
-                        <label class="material-checkbox">
-                            <input type="checkbox" name="instagramCheck">
-                            <span class="checkmark"></span>
-                            <p>Instagram</p>
-                        </label> 
-                        <label class="material-checkbox">
-                            <input type="checkbox" name="whatsappCheck">
-                            <span class="checkmark"></span>
-                            <p>WhatsApp</p>
-                        </label> 
-                        <label class="material-checkbox">
-                            <input type="checkbox" name="tiktokCheck">
-                            <span class="checkmark"></span>
-                            <p>TikTok</p>
-                        </label> 
-
-                        
-                    </div>
-                    <div class="link-inputs">
-                        <input type="text" name="facebookLink" id="">
-                        <input type="text" name="youtubeLink" id="">
-                        <input type="text" name="instagramLink" id="">
-                        <input type="text" name="tiktokLink" id="">
-                        <input type="text" name="whatsappLink" id="">
-                    </div>
-                </div>
-                  
-                <input type="file" id="img" name="img" accept="image/*">
-                <div class="full-width-button">
-                    <app-button 
-                        link="/register-page"  
-                        buttonText="Submit"
-                        hoverBackgroundColor="#bf9c7d"
-                        width="100%"
-                    ></app-button>
-        
-                </div>
-        
-            </form>
-        </div>
-    </ng-template>
-
-    <ng-template #secondTabContent>
-       
-        <div class="gift-table">
+        <div class="leader-table" *ngIf="!isEditing">
             <table>
                 <thead>
                     <tr>
@@ -91,23 +16,134 @@
                         <th>Gift Name</th>
                         <th>Gift Category</th>
                         <th>Gift Description</th>
-                     </tr>
-                </thead>  
-                <tbody>
-                    <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
-                    <td>cell4_1</td>
+                        <th></th>
                     </tr>
-                    <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    <td>cell4_2</td>
+                </thead>
+                 <tbody>
+                    <tr *ngFor="let leader of leaders">
+                        <td class="image-table">
+                            <img *ngIf="leader.imagePath" [src]="getImageUrl(leader.imagePath)" alt="Leader Image">
+                            <img *ngIf="!leader.imagePath" src="assets/placeholder.jpg" alt="Placeholder">
+                        </td>
+                        <td>{{ leader.name }}</td>
+                        <td>{{ leader.gift }}</td>
+                        <td>{{ leader.info ?? '' | truncate: 10 }}</td>    
+                          
+
+                        <td class="editorials">
+                            <button class="delete-leader-btn" (click)="onDeleteLeader(leader)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg>
+                            </button>
+                            <button class="edit-leader-btn" (click)="startEdit(leader)" >
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                            </button>
+                        </td>
                     </tr>
-                    </tbody>            
+                    
+                </tbody> 
             </table>
+            <div class="pagination">
+                <button [disabled]="currentPage === 1" (click)="goToPreviousPage()">Previous</button>
+                <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                <button [disabled]="currentPage === totalPages" (click)="goToNextPage()">Next</button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #secondTabContent>
+        <div class="submission-side" *ngIf="isEditing || isCreating">
+            <h3>Add New Leader</h3>
+            <div class="liner"></div>
+
+            <form [formGroup]="leaderForm" (ngSubmit)="isCreating ? onCreateLeader() : onUpdateLeader()" enctype="multipart/form-data">
+                <!-- Name -->
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+                    </div>
+                    <input type="text" formControlName="name" id="leader-name" class="form-control" placeholder="Leader Name" required />
+                </div>
+
+                <!-- Gift -->
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z"/></svg>
+                    </div>
+                    <select formControlName="gift" id="categories">
+                        <option value="">--Select a gift--</option>
+                        <option value="Traditional Healer">Traditional Healer</option>
+                        <option value="Prophetic">Prophetic</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Seer/Teacher">Seer/Teacher</option>
+                    </select>
+                </div>
+
+                <!-- Bio -->
+                <textarea formControlName="info" placeholder="Enter Leader Bio"></textarea>
+
+                <!-- Social Media -->
+                <div formArrayName="socialMedia" class="social-platform">
+                    <div *ngFor="let control of socialMediaControls.controls; let i = index" [formGroupName]="i" class="social-media-group">
+                      <div class="form-group">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M838-65 720-183v89h-80v-226h226v80h-90l118 118-56 57ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 20-2 40t-6 40h-82q5-20 7.5-40t2.5-40q0-20-2.5-40t-7.5-40H654q3 20 4.5 40t1.5 40q0 20-1.5 40t-4.5 40h-80q3-20 4.5-40t1.5-40q0-20-1.5-40t-4.5-40H386q-3 20-4.5 40t-1.5 40q0 20 1.5 40t4.5 40h134v80H404q12 43 31 82.5t45 75.5q20 0 40-2.5t40-4.5v82q-20 2-40 4.5T480-80ZM170-400h136q-3-20-4.5-40t-1.5-40q0-20 1.5-40t4.5-40H170q-5 20-7.5 40t-2.5 40q0 20 2.5 40t7.5 40Zm34-240h118q9-37 22.5-72.5T376-782q-55 18-99 54.5T204-640Zm172 462q-18-34-31.5-69.5T322-320H204q29 51 73 87.5t99 54.5Zm28-462h152q-12-43-31-82.5T480-798q-26 36-45 75.5T404-640Zm234 0h118q-29-51-73-87.5T584-782q18 34 31.5 69.5T638-640Z"/></svg>
+                        </div>
+                        <select id="platformName-{{ i }}" formControlName="platformName" class="form-control">
+                          <option value="" disabled>--Select Platform--</option>
+                          <option *ngFor="let platform of platformKeys" [value]="platform">{{ platform }}</option>
+                        </select>
+                      </div>
+                  
+                      <div class="form-group">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M754-81q-8 0-15-2.5T726-92L522-296q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l85-85q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l204 204q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13l-85 85q-6 6-13 8.5T754-81Zm0-95 29-29-147-147-29 29 147 147ZM205-80q-8 0-15.5-3T176-92l-84-84q-6-6-9-13.5T80-205q0-8 3-15t9-13l212-212h85l34-34-165-165h-57L80-765l113-113 121 121v57l165 165 116-116-43-43 56-56H495l-28-28 142-142 28 28v113l56-56 142 142q17 17 26 38.5t9 45.5q0 24-9 46t-26 39l-85-85-56 56-42-42-207 207v84L233-92q-6 6-13 9t-15 3Zm0-96 170-170v-29h-29L176-205l29 29Zm0 0-29-29 15 14 14 15Zm549 0 29-29-29 29Z"/></svg>
+                        </div>
+                        <input 
+                          type="text" 
+                          formControlName="platformUrl" 
+                          class="form-control" 
+                          placeholder="Platform URL" 
+                        />
+                      </div>
+                  
+                       <button type="button" class="delete-btn" (click)="removeSocialMedia(i)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                        </button>
+                    </div>
+                    <button type="button" class="add-leader-btn" (click)="addSocialMedia()">
+                        <!-- <span> Add Social Media Platform</span> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>       
+                    </button>
+                </div>
+                   
+                  
+                  
+                
+
+                <!-- File Upload -->
+                <div class="form-group file-uploader">
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                      </svg>
+                    </div>
+                    <label #fileUploadLabel for="file-upload" class="custom-file-upload">
+                      <span *ngIf="!selectedFileName">Upload Image...</span>
+                      <span *ngIf="selectedFileName">{{ selectedFileName }}</span>
+                    </label>
+                    <input id="file-upload" type="file" (change)="onFileSelected($event)" />  
+                  </div>
+
+                <!-- Submit Button -->
+                <div class="full-width-button">
+                    <app-button 
+                        [isSubmit]="true"  [buttonText]="isCreating ? 'Create Leader' : 'Update Leader'"
+                        hoverBackgroundColor="#bf9c7d"
+                        width="28rem">
+                    </app-button>
+                </div>
+            </form>
+            
         </div>
         
     </ng-template>

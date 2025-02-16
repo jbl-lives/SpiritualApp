@@ -94,6 +94,11 @@ button{
     box-sizing: border-box;
   }
 
+.form-group{
+    background-color: green;
+    position: relative;
+}
+
 
 input{
     background-color: #f1ebe3;
@@ -102,4 +107,13 @@ input{
 
 a{
     text-decoration: underline;
+}
+
+.error-feedback{
+    position: absolute;
+    top: 50%;
+    color: crimson;
+   
+    margin-top: 30px !important;
+    
 }

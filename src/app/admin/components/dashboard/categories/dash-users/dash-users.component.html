@@ -2,37 +2,37 @@
     <h3>User Info</h3>
     <div class="liner"></div>
     
-    <div class="gift-table">
+    <div class="user-table">
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Surname</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Image</th>
-                    <th>Password</th>
-                 </tr>
-            </thead>  
-            <tbody>
-                <tr>
-                <td>cell1_1</td>
-                <td>cell2_1</td>
-                <td>cell3_1</td>
-                <td>cell4_1</td>
-                <td>cell5_1</td>
-                <td>cell6_1</td>
+                    <th>Phone Number</th>
+                    <th>Actions</th> 
                 </tr>
-                <tr>
-                <td>cell1_2</td>
-                <td>cell2_2</td>
-                <td>cell3_2</td>
-                <td>cell4_2</td>
-                <td>cell5_2</td>
-                <td>cell6_2</td>
+            </thead>
+              <tbody>
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalUsers }">
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phoneNumber }}</td>
+                    <td class="editorials">
+                        <button class="delete-leader-btn"  (click)="deleteUser(user?.id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg>
+                        </button>
+                    </td>
                 </tr>
-                </tbody>            
+              </tbody>   
         </table>
+        
+        <div class="pagination">
+            <button [disabled]="currentPage === 1" (click)="goToPreviousPage()">Previous</button>
+            <span>Page {{ currentPage }} of {{ totalPages }}</span>
+            <button [disabled]="currentPage === totalPages" (click)="goToNextPage()">Next</button>
+        </div>
     </div>
 </section>
 

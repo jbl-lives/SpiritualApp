@@ -1,48 +1,109 @@
 .submission-side{
-    padding: 20px 30px 30px;
+  padding: 20px 30px 30px;
 }
 
 form{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;   
+    justify-content: space-between;  
 }
 
-input,select{
-    width: 49%;
+.form-group{
+  width: 28rem ;
+  position: relative;
+  z-index: 0;
 }
 
 textarea{
     height:15rem ;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 0;
 }
 
+.socialmedia{
+  width: 100%;
+  background: #777777;
+}
+
+.socialmedia #select-social-option{
+  color: #777777;
+}
+
+.social-platform{
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.social-media-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* background-color: green; */
+}
+
+.delete-btn{
+  background-color: red;
+  width: 7%;
+  height: 3.7rem;
+  margin-top: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-leader-btn{
+  margin: 0 0 60px 0;
+  background-color: #0f1923;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.add-leader-btn span{
+  margin-right: 20px;
+}
+
+.social-media-group .form-group{
+  margin-top: 0;
+  width: 43%;
+  
+}
+
+input[type="file"] {
+  display: none;
+}
+.file-uploader{
+  margin-top: 0;
+}
+.custom-file-upload  {
+  width: 83%;
+  background-color: var(--color, #0f1923);
+  color: #dadada;
+  cursor: pointer;
+  padding: 15px 12px;
+}
+
+.file-uploader .icon-container{
+  background-color: #313f48;
+}
+
 .full-width-button {
-    width: 49%;
+    width: 28rem ;
     display: flex;
     justify-content: center;
+   
 }
   
 .full-width-button app-button {
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
-}
-
-.editor-container {
-    width: 100%; /* Set width to full or a specific width */
-    height: 20rem; /* Adjust height as needed */
-    background-color: #f1ebe3; /* Background color */
-    padding: 10px; /* Padding to keep visible */
-    margin-bottom: 20px; /* Space below */
-    box-sizing: border-box; /* Include padding in height calculation */
-}
-  
-  /* Inner scrollable area */
-.editor-scroll {
-    height: 100%; /* Take full height of the container */
-    overflow-y: scroll; /* Enable vertical scrolling */
     box-sizing: border-box;
 }
 
@@ -54,38 +115,11 @@ textarea{
     flex-wrap: wrap;
 }
 
-.social-media h3{
-    width: 100%;
-    font-size: 1.5rem;
-    margin-bottom: -20px;
-}
-
 .social-media .checkboxes{
     width: 80%;
-    display: flex;
-    
+    display: flex; 
 }
 
-.social-media .checkboxes p{
-  color: #171f25;
-}
-
-.social-media .material-checkbox{
-    /* background-color: orange;
-    border-right: 1px solid green; */
-}
-
-.social-media .link-inputs{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* background-color: aqua; */
-    justify-content: space-between;
-}
-
-.social-media input{
-    width: 49%;
-}
 
 .material-checkbox {
     display: flex;
@@ -158,3 +192,134 @@ textarea{
   label{
     width: 100%;
   }
+
+
+ /* Table Container */
+.leader-table {
+  width: 100%;
+  padding: 20px;
+  overflow-x: auto; /* Ensures responsiveness */
+}
+
+/* Table Styling */
+.leader-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Table Header */
+thead {
+  background-color: #bf9c7d;
+  color: #ffffff;
+}
+
+thead th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #a3866b;
+}
+
+/* Table Rows */
+tbody tr {
+  transition: background 0.3s ease-in-out;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f5f1;
+}
+
+tbody tr:hover {
+  background: #e4dacd;
+}
+
+/* Table Data */
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+}
+
+/* Image Styling */
+.image-table {
+  padding: 5px;
+}
+
+td img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Action Buttons */
+.editorials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.editorials button {
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: white;
+  transition: 0.3s;
+}
+
+.editorials .delete-leader-btn {
+  background-color: red;
+}
+
+.editorials .delete-leader-btn:hover {
+  background-color: #c9302c;
+}
+
+.editorials .edit-leader-btn {
+  background-color: #4d798d;
+}
+
+.editorials .edit-leader-btn:hover {
+  background-color: #4d798d;
+}
+
+/* dash-users.component.css (or your component's CSS file) */
+.pagination {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the pagination controls */
+  align-items: center; /* Vertically align items */
+  margin-top: 20px; /* Add some space above the pagination */
+}
+
+.pagination button {
+  padding: 8px 16px; /* Adjust padding as needed */
+  margin: 0 5px; /* Add spacing between buttons and span */
+  border: none; /* Remove default button border */
+  border-radius: 4px; /* Add rounded corners */
+  background-color: #bf9c7d; /* Your accent color for buttons */
+  color: white; /* White text color */
+  cursor: pointer; /* Indicate it's clickable */
+  font-size: 14px; /* Adjust font size */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.pagination button:hover {
+  background-color: #a67f5e; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+  background-color: #ddd; /* Grayed out when disabled */
+  color: #999;
+  cursor: default; /* No pointer when disabled */
+}
+
+.pagination span {
+  margin: 0 10px; /* Add spacing around the page info */
+  font-size: 16px; /* Adjust font size */
+  color: #686767; /* A bit darker text */
+}

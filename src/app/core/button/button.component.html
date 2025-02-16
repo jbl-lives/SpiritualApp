@@ -1,11 +1,13 @@
 <!-- /* From Uiverse.io by mrhyddenn */  -->
 
 
-<button class="button" [style.width]="width" [routerLink]="link">
-    <span class="button_lg">
-      <span class="button_sl"></span>
-      <span class="button_text">{{ buttonText }}</span>
+<button 
+    class="button" 
+    [style.width]="width" 
+    [type]="isSubmit ? 'submit' : 'button'"  (click)="onClick()"  [disabled]="disabled"> <span class="button_lg">
+        <span class="button_sl"></span>
+        <span class="button_text">{{ buttonText }}</span>
     </span>
-  </button>
+</button>
   
   

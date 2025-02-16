@@ -1,31 +1,61 @@
 <section class="dash-tools">
-    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates" dashHeader="Add New Tools"></app-dash-tab>
 
     <!-- Templates for each tab's content -->
      <ng-template #firstTabContent>
         <div class="submission-side">
-            <h3>Add New Tools</h3>
-            <div class="liner"></div>
-            
-            <form action="">
-                <input type="text" name="toolName" id="tool-name" placeholder="Enter Tool Name...">
-                
+            <form   [formGroup]="toolForm" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M754-81q-8 0-15-2.5T726-92L522-296q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l85-85q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l204 204q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13l-85 85q-6 6-13 8.5T754-81Zm0-95 29-29-147-147-29 29 147 147ZM205-80q-8 0-15.5-3T176-92l-84-84q-6-6-9-13.5T80-205q0-8 3-15t9-13l212-212h85l34-34-165-165h-57L80-765l113-113 121 121v57l165 165 116-116-43-43 56-56H495l-28-28 142-142 28 28v113l56-56 142 142q17 17 26 38.5t9 45.5q0 24-9 46t-26 39l-85-85-56 56-42-42-207 207v84L233-92q-6 6-13 9t-15 3Zm0-96 170-170v-29h-29L176-205l29 29Zm0 0-29-29 15 14 14 15Zm549 0 29-29-29 29Z"/></svg>
+                    </div>
+                    <input type="text" formControlName="tool" id="tool-name" class="form-control" placeholder="Tool " required />
+                </div>
+
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z"/></svg>
+                    </div>
+                    <select formControlName="category" id="categories">
+                        <option value="">--Select a gift--</option>
+                        <option value="Candles">Candles</option>
+                        <option value="Cloths">Cloths</option>
+                        <option value="Divination Tools">Divination Tools</option>
+                        <option value="Divination Space">Divination Space</option>
+                        <option value="Drinks">Drinks</option>
+                    </select>
+                </div>
                 
                 <div class="editor-container">
-                    <div class="editor-scroll">
-                      <app-text-editor></app-text-editor>
+                    <div class="editor-scroll"> 
+                        <app-text-editor [content]="toolForm.get('description')?.value || ''" 
+                                (contentChange)="onDescriptionChange($event)">
+                        </app-text-editor>
                     </div>
-                  </div>
+                </div>
+                
                   
-                <input type="file" id="img" name="toolImg" accept="image/*">
-                <div class="full-width-button">
+                  <div class="form-group file-uploader">
+                  <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                      <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                    </svg>
+                  </div>
+                  <label #fileUploadLabel for="file-upload" class="custom-file-upload">
+                     <span *ngIf="!selectedFileName">Upload Image...</span>
+                    <span *ngIf="selectedFileName">{{ selectedFileName }}</span> 
+                  </label>
+                  <input id="file-upload" type="file" (change)="onFileSelected($event)" />  
+                </div>
+
+                
+                <div class="full-width-button"> 
                     <app-button 
-                        link="/register-page"  
-                        buttonText="Submit"
+                        [isSubmit]="true"  
                         hoverBackgroundColor="#bf9c7d"
-                        width="100%"
-                    ></app-button>
-        
+                        width="30rem">
+                    </app-button>   
                 </div>
         
             </form>
@@ -36,27 +66,16 @@
        
         <div class="tool-table">
             <table>
-                <thead>
-                    <tr>
-                        <th>Tool Image</th>
-                        <th>Tool Name</th>
-                        <th>Tool Description</th>
-                     </tr>
-                </thead>  
                 <tbody>
-                    <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
-                    
+                    <tr *ngFor="let tool of tools">
+                        <td>
+                            <img *ngIf="tool.imagePath" [src]="getImageUrl(tool.imagePath)" alt="Tool Image">
+                            <span *ngIf="!tool.imagePath">No Image</span> </td>
+                        <td>{{ tool.name }}</td>
+                        <td>{{ tool.description }}</td>
+                        <td><button (click)="startEdit(tool)">Edit</button></td>
                     </tr>
-                    <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    
-                    </tr>
-                    </tbody>            
+                </tbody>
             </table>
         </div>
         

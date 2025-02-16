@@ -8,21 +8,48 @@ form{
     flex-wrap: wrap;
     justify-content: space-between;
     
+    
 }
 
-input,select{
-    width: 49%;
+.form-group{
+  width: 28rem ;
+  position: relative;
+  z-index: 0;
+}
+
+
+
+input[type="file"] {
+  display: none;
+}
+.file-uploader{
+  margin-top: 0;
+}
+.custom-file-upload  {
+  width: 83%;
+  background-color: var(--color, #0f1923);
+  color: #dadada;
+  cursor: pointer;
+  padding: 15px 12px;
+}
+
+.file-uploader .icon-container{
+  background-color: #313f48;
 }
 
 .full-width-button {
     width: 49%;
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: yellow;
   }
   
   .full-width-button app-button {
     width: 100%;
+    height: 100%;
     max-width: 100%;
+    margin-left: auto;
     box-sizing: border-box;
   }
 
@@ -46,9 +73,12 @@ input,select{
     height: 100%; /* Take full height of the container */
     overflow-y: scroll; /* Enable vertical scrolling */
     box-sizing: border-box;
+    background-color: #fff;
   }
 
-
+  app-text-editor{
+    background-color: #fff;
+  }
 
 .tool-table{
     width: 100%;

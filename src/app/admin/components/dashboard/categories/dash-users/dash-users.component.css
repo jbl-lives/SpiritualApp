@@ -6,12 +6,12 @@
 .liner{
     margin-bottom: 30px;
 }
-.gift-table{
+.user-table{
     width: 100%;
     
 }
 
-.gift-table table{
+.user-table table{
     
     width: 100%;
 }
@@ -40,3 +40,63 @@ tbody td{
 tr:nth-child(even) {
     background: #f1ebe3;
   }
+
+.editorials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.editorials button {
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    color: white;
+    transition: 0.3s;
+}
+  
+.editorials .delete-leader-btn {
+    background-color: red;;
+}
+  
+.editorials .delete-leader-btn:hover {
+    background-color: #c9302c;
+}
+
+  /* dash-users.component.css (or your component's CSS file) */
+.pagination {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the pagination controls */
+    align-items: center; /* Vertically align items */
+    margin-top: 20px; /* Add some space above the pagination */
+}
+
+.pagination button {
+    padding: 8px 16px; /* Adjust padding as needed */
+    margin: 0 5px; /* Add spacing between buttons and span */
+    border: none; /* Remove default button border */
+    border-radius: 4px; /* Add rounded corners */
+    background-color: #bf9c7d; /* Your accent color for buttons */
+    color: white; /* White text color */
+    cursor: pointer; /* Indicate it's clickable */
+    font-size: 14px; /* Adjust font size */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.pagination button:hover {
+    background-color: #a67f5e; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+    background-color: #ddd; /* Grayed out when disabled */
+    color: #999;
+    cursor: default; /* No pointer when disabled */
+}
+
+.pagination span {
+    margin: 0 10px; /* Add spacing around the page info */
+    font-size: 16px; /* Adjust font size */
+    color: #686767; /* A bit darker text */
+}

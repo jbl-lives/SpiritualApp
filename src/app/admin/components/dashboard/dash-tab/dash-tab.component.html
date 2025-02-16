@@ -1,10 +1,13 @@
 <div class="tabs">
     <ul>
-        <li *ngFor="let tab of tabItems; let i = index" 
-            [ngClass]="{active: selectedTab === i}"
-            (click)="selectTab(i)">
-            {{tab.label}}
-        </li>
+        <div class="tab-items">
+            <li *ngFor="let tab of tabItems; let i = index" 
+                [ngClass]="{active: selectedTab === i}"
+                (click)="selectTab(i)">
+                {{tab.label}}
+            </li>
+        </div>
+        <h4 class="dash-heading">{{dashHeader}}</h4>
     </ul>
 
     <div class="tab-content">
@@ -13,5 +16,3 @@
         </ng-container>
     </div>
 </div>
-
-  

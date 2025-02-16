@@ -3,26 +3,44 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../core/button/button.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms'; 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TextEditorComponent } from './text-editor/text-editor.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { NotificationComponent } from './notification/notification.component';
+import { SideNavComponent } from '../core/side-nav/side-nav.component';
+import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TruncatePipe } from './pipes/truncate.pipe';
+
+
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    TextEditorComponent
+    SideNavComponent,
+    TextEditorComponent,
+    NotificationComponent,
+    LoadingIndicatorComponent,
+    TruncatePipe
   ],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,  // ✅ Added here
     RouterModule,
     CKEditorModule,
-    EditorModule,
+    NgxPaginationModule ,
   ],
   exports: [
     TextEditorComponent,
-    ButtonComponent
+    ButtonComponent,
+    SideNavComponent,
+    LoadingIndicatorComponent,
+    NgxPaginationModule,
+    TruncatePipe,
+    FormsModule,
+    ReactiveFormsModule,  // ✅ Added here
+    RouterModule 
   ]
 })
 export class SharedModule { }

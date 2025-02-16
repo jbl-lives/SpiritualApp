@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Toast, ToastrModule } from 'ngx-toastr';
 
 import { NavigationComponent } from './core/header/navigation/navigation.component';
 import { LandingPageComponent } from './features/home-components/landing-page/landing-page.component';
@@ -32,21 +32,20 @@ import { MainInfoCardComponent } from './shared/main-info-card/main-info-card.co
 import { IntroSectionComponent } from './features/home-components/intro-section/intro-section.component';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { DashModule } from './admin/components/dashboard/dashboard.module';
 
 import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { UserManagementComponent } from './admin/components/user-management/user-management.component';
 import { SettingsComponent } from './admin/components/settings/settings.component';
 import { DashNavigationComponent } from './admin/components/dashboard/dash-navigation/dash-navigation.component';
-import { DashCardComponent } from './admin/components/dashboard/dash-card/dash-card.component';
-import { DashTabComponent } from './admin/components/dashboard/dash-tab/dash-tab.component';
-import { DashGiftsComponent } from './admin/components/dashboard/categories/dash-gifts/dash-gifts.component';
-import { DashToolsComponent } from './admin/components/dashboard/categories/dash-tools/dash-tools.component';
-import { DashLeadersComponent } from './admin/components/dashboard/categories/dash-leaders/dash-leaders.component';
-import { DashUsersComponent } from './admin/components/dashboard/categories/dash-users/dash-users.component';
+//import { DashCardComponent } from './admin/components/dashboard/dash-card/dash-card.component';
 
-
-
+import { provideToastr } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -70,20 +69,15 @@ import { DashUsersComponent } from './admin/components/dashboard/categories/dash
     GiftsPageComponent,
     InformationPageComponent,
     ToolsPageComponent,
-    SideNavComponent,
+    //SideNavComponent,
     MainInfoCardComponent,
     IntroSectionComponent,
     AboutUsPageComponent,
-    DashboardComponent,
+    
     UserManagementComponent,
     SettingsComponent,
-    DashNavigationComponent,
-    DashCardComponent,
-    DashTabComponent,
-    DashGiftsComponent,
-    DashToolsComponent,
-    DashLeadersComponent,
-    DashUsersComponent,
+
+    
    
     
   ],
@@ -92,10 +86,28 @@ import { DashUsersComponent } from './admin/components/dashboard/categories/dash
     AppRoutingModule,
     RouterModule, 
     AuthModule,
-    SharedModule 
+    SharedModule,
+    DashModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right', // Options: toast-top-right, toast-bottom-right, etc.
+      preventDuplicates: true,         // Prevent duplicate messages
+      timeOut: 5000,                   // Auto-dismiss timeout (in milliseconds)
+      closeButton: true,               // Show close button
+      progressBar: true                // Show a progress bar
+    }),
+    
+    
+    
   ],
   
-  providers: [],
+  providers: [
+    provideHttpClient(),
+    provideToastr({positionClass: 'toast=top-center'}), 
+    provideAnimationsAsync(),
+    
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

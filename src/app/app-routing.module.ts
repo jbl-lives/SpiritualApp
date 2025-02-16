@@ -10,53 +10,18 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AboutUsPageComponent } from './features/pages/about-us-page/about-us-page.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 
-
-
-
 const routes: Routes = [
-  {
-    path: "",
-    component: HomeComponentsComponent
+  { path: "", component: HomeComponentsComponent }, // This is your default route
+  { path: "leaders-page", component: LeadersPageComponent },
+  { path: "gifts-page", component: GiftsPageComponent },
+  { path: "information", component: InformationPageComponent },
+  { path: "tools-page", component: ToolsPageComponent },
+  { path: "about-page", component: AboutUsPageComponent },
+  { path: "login-page", component: LoginComponent },
+  { path: "register-page", component: RegisterComponent },
+  { path: "dashboard-page", component: DashboardComponent },
 
-  },
-  
-  {
-    path: "leaders-page",
-    component: LeadersPageComponent
-  },
-  {
-    path: "gifts-page",
-    component: GiftsPageComponent
-  }
-  , 
-  {
-    path: "information",
-    component: InformationPageComponent
-  },
-  {
-    path: "tools-page",
-    component: ToolsPageComponent
-  },
-  {
-    path: "about-page",
-    component: AboutUsPageComponent
-  }
-  ,
-  {
-    path: "login-page",
-    component: LoginComponent
-  }
-  ,
-  {
-    path: "register-page",
-    component: RegisterComponent
-  }
-  ,
-  {
-    path: "dashboard-page",
-    component: DashboardComponent
-  },
-
+  { path: '**', redirectTo: '' }  // Catch-all route - VERY IMPORTANT!
 ];
 
 @NgModule({

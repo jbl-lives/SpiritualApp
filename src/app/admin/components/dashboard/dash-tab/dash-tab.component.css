@@ -1,26 +1,40 @@
-.tabs{
-    width: 100%;
-}
-
 .tabs ul {
     display: flex;
+    justify-content: space-between; /* Pushes items to left and right */
+    align-items: center; /* Centers items vertically */
     background-color: #364854;
     position: sticky;
+    z-index: 100;
     top: 0;
-
+     
 }
 
-.tabs ul li{
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
+.tab-items{
+    display: flex;
+}
+
+.tabs ul li {
+    display: flex;
+    padding: 15px 20px;
     color: #fff;
+    list-style: none; /* Ensures no bullet points */
 }
-.tabs ul li:hover{
+
+.tabs ul li:hover {
     cursor: pointer;
 }
 
-.active{
+.active {
     background-color: #b0825f;
     color: #fff;
 }
+
+.dash-heading {
+    color: #b0825f;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-right: 15px;
+    margin-left: auto; /* Pushes the heading to the right */
+}
+

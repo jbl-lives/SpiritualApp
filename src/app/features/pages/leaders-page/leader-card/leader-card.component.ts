@@ -17,5 +17,9 @@ export class LeaderCardComponent {
  @Input() leaders: LeaderItems[] = [];
  @Input() leader!: LeaderItems; // For a single leader
 
+ showLeader(){
+  console.log("Leader clicked")
+ }
+
 
 }

@@ -35,16 +35,23 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
     padding-bottom: 30px;
     margin-bottom: 20px;
     border-bottom: 1px solid #333;
     
 }
+
+.logout{
+    float: right;
+    margin: 10px 20px 0 0;
+    color: rgb(78, 77, 77);
+}
 .user-info .image-box{ 
-    width:3.7rem;
-    height: 3.7rem;
+    width:3.4rem;
+    height: 3.4rem;
     border-radius: 50px;
+    background-color: green;
 }
 
 .user-info .image-box img{

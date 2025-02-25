@@ -26,7 +26,7 @@ interface UserResponse {  // Define interface for the API response
 export class DashUsersComponent implements OnInit {
   users: any[] = []; // Or your User interface
   p: number = 1; // Current page
-  pageSize: number = 7;
+  pageSize: number = 8;
   totalUsers: number = 0;
   currentPage: number = 1; // Define currentPage
   totalPages: number = 0; // Define totalPages

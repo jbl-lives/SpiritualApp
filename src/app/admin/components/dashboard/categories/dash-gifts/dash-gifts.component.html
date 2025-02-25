@@ -1,47 +1,14 @@
-<section class="dash-gifts">
-    <app-dash-tab [tabItems]="tabItems" [tabContents]="tabContentTemplates"></app-dash-tab>
+<section class="dash-tools">
+    <app-dash-tab
+        [tabItems]="tabItems"
+        [tabContents]="tabContentTemplates"
+        [selectedTab]="activeTabIndex"
+        (tabSelected)="onTabSelected($event)"
+        dashHeader="Gifts">
+    </app-dash-tab>
 
     <!-- Templates for each tab's content -->
-    <ng-template #firstTabContent>
-        <div class="submission-side">
-            
-            
-            <form action="">
-                
-                    
-                <input type="password" placeholder="Password" id="password" class="form-control" required name="password" >
-            
-                <select name="category" id="categories" form="carform">
-                    <option value="">--Select a category--</option>
-                    <option value="Traditional Healer">Traditional Healer</option>
-                    <option value="Prophetic">Prophetic</option>
-                    <option value="Psychic">Psychic</option>
-                    <option value="Seer/Teacher">Seer/Teacher</option>
-                </select>
-                
-                <div class="editor-container">
-                    <div class="editor-scroll">
-                      <app-text-editor></app-text-editor>
-                    </div>
-                  </div>
-                  
-                <input type="file" id="img" name="img" accept="image/*">
-                <div class="full-width-button">
-                    <app-button 
-                        link="/register-page"  
-                        buttonText="Submit"
-                        hoverBackgroundColor="#bf9c7d"
-                        width="100%"
-                    ></app-button>
-        
-                </div>
-        
-            </form>
-        </div>
-    </ng-template>
-
-    <ng-template #secondTabContent>
-       
+     <ng-template #firstTabContent>
         <div class="gift-table">
             <table>
                 <thead>
@@ -49,28 +16,106 @@
                         <th>Gift Image</th>
                         <th>Gift Name</th>
                         <th>Gift Category</th>
-                        <th>Gift Description</th>
-                     </tr>
-                </thead>  
+                        <th>Gift Info</th>
+                        <th></th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
-                    <td>cell4_1</td>
-                    </tr>
-                    <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    <td>cell4_2</td>
-                    </tr>
-                    </tbody>            
-            </table>
-        </div>
-        
-    </ng-template>
-</section>
+                    <tr *ngFor="let gift of gifts">
+                        <td class="image-table">
+                            <img *ngIf="gift.imagePath" [src]="getImageUrl(gift.imagePath)" alt="Gift Image">
+                            <img *ngIf="!gift.imagePath" src="assets/placeholder.jpg" alt="Placeholder">
+                        </td>
+                        <td>{{ gift.name }}</td>
+                        <td>{{ gift.category }}</td>
+                        <td>{{ gift.info ? (gift.info | truncate: 10) : '' }}</td>
 
+                        <td class="editorials">
+                            <button class="delete-gift-btn" (click)="onDeleteGift(gift)"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                                    <path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/>
+                                </svg>
+                            </button>
+                            <button class="edit-gift-btn" (click)="startEdit(gift)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                                    <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button [disabled]="currentPage === 1" (click)="goToPreviousPage()">Previous</button>
+                <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                <button [disabled]="currentPage === totalPages" (click)="goToNextPage()">Next</button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #secondTabContent>
+        <div class="submission-side" *ngIf="isEditing || isCreating">
+            <form [formGroup]="giftForm" (ngSubmit)="isCreating ? onCreateGift() : onUpdateGift()" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M160-280v80h640v-80H160Zm0-440h88q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q30 0 55.5 15.5T460-826l20 26 20-26q18-24 44-39t56-15q50 0 85 35t35 85q0 11-1.5 21t-6.5 19h88q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720Zm0 320h640v-240H596l84 114-64 46-136-184-136 184-64-46 82-114H160v240Zm200-320q17 0 28.5-11.5T400-760q0-17-11.5-28.5T360-800q-17 0-28.5 11.5T320-760q0 17 11.5 28.5T360-720Zm240 0q17 0 28.5-11.5T640-760q0-17-11.5-28.5T600-800q-17 0-28.5 11.5T560-760q0 17 11.5 28.5T600-720Z"/></svg>
+                    </div>
+                    <input type="text" formControlName="name"  class="form-control" placeholder="Gift Name" required />
+                </div>
+
+                <div class="form-group">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#b0825f"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z"/></svg>
+                    </div>
+                    <select formControlName="category" id="categories">
+                        <option value="">--Select a gift--</option>
+                        <option value="Traditional Healer">Traditional Healer</option>
+                        <option value="Prophetic">Prophetic</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Seer/Teacher">Seer/Teacher</option>
+                    </select>
+                </div>
+                
+                <div class="editor-container">
+                    <div class="editor-scroll"> 
+                        <app-text-editor (contentChange)="onDescriptionChange($event)">
+                        </app-text-editor>
+                    </div>
+                </div>
+                
+                  
+                <div class="form-group file-uploader" >
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                      </svg>
+                      <img class="gift-picture" [src]="giftPictureUrl" alt="Gift Image" *ngIf="giftPictureUrl">
+                      <img class="gift-picture" src="" alt="" srcset="" *ngIf="!giftPictureUrl">
+                    </div>
+                    <label for="file-upload" class="custom-file-upload">
+                      <span *ngIf="!giftForm.get('image')?.value">Upload Image...</span>
+                      <span *ngIf="giftForm.get('image')?.value">{{ giftForm.get('image')?.value.name }}</span>
+                    </label>
+                    <input id="file-upload" type="file" (change)="onFileSelected($event)" style="display: none;" />
+                  </div>
+
+                
+                <div class="full-width-button"> 
+                    <app-button 
+                        [isSubmit]="true" 
+                        [buttonText]="isCreating ? 'Create Gift' : 'Update Gift'"
+                        hoverBackgroundColor="#bf9c7d"
+                        width="30rem"
+                        [disabled]="giftForm.invalid">
+                    </app-button>   
+
+                    <button class="cancel-button" (click)="cancelUpdate()">Cancel Update</button>
+                </div>
+        
+            </form>
+        </div>   
+    </ng-template> 
+</section>
 
 

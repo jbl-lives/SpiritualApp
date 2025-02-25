@@ -48,7 +48,7 @@ export class DashLeadersComponent implements OnInit, AfterViewInit {
   imagePath = new FormControl('');
   leadersCount: number = 0;
   // pagination
-  pageSize: number = 10;
+  pageSize: number = 5;
   currentPage: number = 1;
   totalPages: number = 0;
 
@@ -109,18 +109,19 @@ export class DashLeadersComponent implements OnInit, AfterViewInit {
 
 
   // Load leaders from the server
-  private loadLeaders(): void {
-    this.leaderService.getLeaders().subscribe(
-        (response: LeaderResponse) => { // Type the response
-            this.leaders = response.leaders; // Access the leaders array!
-            this.leadersCount = response.totalCount; // Access the total count
-            console.log("Leaders data:", this.leaders);
-        },
-        (error) => {
-            console.error('Error loading leaders:', error);
-        }
+  loadLeaders(): void {
+    this.leaderService.getLeaders(this.currentPage, this.pageSize).subscribe( // Pass parameters
+      (response: LeaderResponse) => {
+        this.leaders = response.leaders;
+        this.leadersCount = response.totalCount;
+        this.calculateTotalPages(); // Calculate total pages
+        console.log("Leaders data:", this.leaders);
+      },
+      (error) => {
+        console.error('Error loading leaders:', error);
+      }
     );
- }
+  }
   
   // Add a new social media form group
   addSocialMedia(): void {
@@ -161,33 +162,41 @@ export class DashLeadersComponent implements OnInit, AfterViewInit {
 
   onUpdateLeader(): void {
     if (this.leaderForm.valid && this.leaderToUpdate?.id) {
-        const formData = new FormData();
-        formData.append('id', this.leaderToUpdate.id.toString());
-        formData.append('name', this.leaderForm.get('name')?.value);
-        formData.append('gift', this.leaderForm.get('gift')?.value);
-        formData.append('info', this.leaderForm.get('info')?.value);
-
-        if (this.selectedFile) {
-            formData.append('image', this.selectedFile, this.selectedFile.name);
-        }
-
-        // Convert social media to JSON
-        const socialMediaProfiles = this.leaderForm.get('socialMedia') as FormArray;
-        formData.append('socialMediaProfiles', JSON.stringify(socialMediaProfiles.value));
-
-        this.leaderService.updateLeader(this.leaderToUpdate.id, formData).subscribe({
-            next: () => {
-                console.log('Leader updated successfully');
-                this.isEditing = false;
-                this.leaderToUpdate = null;
-                this.resetForm();
-                this.activeTabIndex = 0;
-                this.loadLeaders();
-                
-            },
-            error: (error) => console.error('Error updating leader', error)
-        });
+      const formData = new FormData();
+      formData.append('id', this.leaderToUpdate.id.toString());
+      formData.append('name', this.leaderForm.get('name')?.value);
+      formData.append('gift', this.leaderForm.get('gift')?.value);
+      formData.append('info', this.leaderForm.get('info')?.value);
+  
+      if (this.selectedFile) {
+        formData.append('image', this.selectedFile, this.selectedFile.name);
+      }
+  
+      // Serialize social media properly
+      const socialMediaProfiles = this.leaderForm.get('socialMedia') as FormArray;
+      formData.append('socialMediaProfiles', JSON.stringify(socialMediaProfiles.value));
+  
+      this.leaderService.updateLeader(this.leaderToUpdate.id, formData).subscribe({
+        next: () => {
+          console.log('Leader updated successfully');
+          this.isEditing = false;
+          this.leaderToUpdate = null;
+          this.resetForm();
+          this.activeTabIndex = 0;
+          this.loadLeaders();
+        },
+        error: (error) => console.error('Error updating leader', error)
+      });
     }
+  }
+  
+
+  cancelUpdate(): void {
+    this.isEditing = false;
+    this.leaderToUpdate = null;
+    this.leaderForm.reset(); // Clear the form
+    this.activeTabIndex = 0; // Return to the "View Leaders" tab (if applicable)
+    this.loadLeaders(); // Refresh the list of leaders
   }
 
   
@@ -200,37 +209,32 @@ export class DashLeadersComponent implements OnInit, AfterViewInit {
   
   startEdit(leader: Leader | null | undefined): void {
     if (!leader) {
-        console.error("Leader is null or undefined. Cannot start edit.");
-        return; // Exit early if leader is invalid
-    }
-
-    console.log("Editing leader:", leader); // Debugging log
-
-    this.isEditing = true;
-    this.isCreating = false; // Switch to update mode
-    this.leaderToUpdate = { ...leader };
-
-    // Ensure the form is properly patched
-    this.leaderForm.patchValue({
-        name: leader.name || '',
-        gift: leader.gift || '',
-        info: leader.info || '',
-        imagePath: leader.imagePath || ''
-    });
-
-    // Clear old social media entries
-    if (leader.socialMediaProfiles && leader.socialMediaProfiles.length > 0) {
-      this.socialMediaControls.clear(); // Ensure it's cleared before adding new ones
-      leader.socialMediaProfiles.forEach(profile => {
-          this.socialMediaControls.push(this.createSocialMediaGroup());
-          const index = this.socialMediaControls.length - 1;
-          this.socialMediaControls.at(index).patchValue(profile);
-      });
+      console.error("Leader is null or undefined. Cannot start edit.");
+      return;
     }
   
-      // Remove onTabSelected(1) to prevent form reset
-      this.onTabSelected(1)
+    this.isEditing = true;
+    this.isCreating = false;
+    this.leaderToUpdate = leader;
+  
+    this.leaderForm.patchValue({
+      name: leader.name,
+      gift: leader.gift,
+      info: leader.info,
+      imagePath: leader.imagePath
+    });
+  
+    this.socialMediaControls.clear();
+    leader.socialMediaProfiles.forEach(profile => {
+      this.socialMediaControls.push(this.fb.group({
+        platformName: [profile.platformName, Validators.required],
+        platformUrl: [profile.platformUrl, [Validators.required, Validators.pattern(/https?:\/\/.*/)]]
+      }));
+    });
+  
+    this.activeTabIndex = 1;
   }
+  
 
 
   private handleImageUpload(leader: any, callback: () => void) {
@@ -305,12 +309,16 @@ export class DashLeadersComponent implements OnInit, AfterViewInit {
     }
 }
 
-goToNextPage() {
-    if (this.currentPage < this.totalPages) {
-        this.currentPage++;
-        this.loadLeaders();
-    }
-}
+  goToNextPage() {
+      if (this.currentPage < this.totalPages) {
+          this.currentPage++;
+          this.loadLeaders();
+      }
+  }
+
+  calculateTotalPages() {
+    this.totalPages = Math.ceil(this.leadersCount / this.pageSize);
+  }
 
   
 }  

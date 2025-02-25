@@ -42,7 +42,6 @@ input[type="file"] {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background-color: yellow;
   }
   
   .full-width-button app-button {
@@ -56,6 +55,12 @@ input[type="file"] {
   .liner{
     margin:15px 0 30px 0;
     
+}
+
+.tool-table{
+  width: 100%;
+  padding: 20px;
+  overflow-x: auto; /* Ensures responsiveness */
 }
 
 
@@ -80,37 +85,34 @@ input[type="file"] {
     background-color: #fff;
   }
 
-.tool-table{
-    width: 100%;
-    padding :30px;
-}
-
-.tool-table table{
-    
-    width: 100%;
-}
-
-thead{
-    width: 100%;
-    background-color: #bf9c7d;
-    padding: 10px;
-    color:#ffff;
-    
-}
-
-thead th{
-    border: 1px solid #fff;
-    padding: 15px 10px;
-    text-align: start;
-    border: 1px solid #cacaca;
-}
-
-tbody td{
-    padding:10px;
-    border: 1px solid #cacaca;
-    color: #686767;
-}
-
-tr:nth-child(even) {
-    background: #f1ebe3;
+  .editorials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .editorials button {
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .editorials .delete-leader-btn {
+    background-color: red;
+  }
+  
+  .editorials .delete-leader-btn:hover {
+    background-color: #c9302c;
+  }
+  
+  .editorials .edit-leader-btn {
+    background-color: #4d798d;
+  }
+  
+  .editorials .edit-leader-btn:hover {
+    background-color: #4d798d;
   }

@@ -1,50 +1,83 @@
-.dash-gifts{
-    padding: 0;
-}
+
 .submission-side{
     padding: 20px 30px 30px;
 }
-p{
-    margin-bottom: 15px;
-}
+
 form{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     
-}
-
-input,select, .form-group{
-    width: 49%;
+    
 }
 
 .form-group{
-    background-color: green;
+  width: 28rem ;
+  position: relative;
+  z-index: 0;
+}
+
+
+
+input[type="file"] {
+  display: none;
+}
+.file-uploader{
+  margin-top: 0;
+}
+.custom-file-upload  {
+  width: 83%;
+  background-color: var(--color, #0f1923);
+  color: #dadada;
+  cursor: pointer;
+  padding: 15px 12px;
+}
+
+.file-uploader .icon-container{
+  background-color: #313f48;
+  position: relative;
+}
+
+.icon-container .gift-picture{
+  position: absolute;
+  width: 100;
+  height: 100%;
+  top:0;
+  border: none;
 }
 
 .full-width-button {
     width: 49%;
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
   
   .full-width-button app-button {
     width: 100%;
+    height: 100%;
     max-width: 100%;
+    margin-left: auto;
     box-sizing: border-box;
   }
 
-  .liner{
-    content: "";
-    width: 65px;
-    height: 2px;
-    background-color: #E5AC66;
-    margin:15px 0 30px 0;
-    
+  .cancel-button{
+    background: none;
+    margin-top: 7px;
+    margin-left: auto;
+    border: none;
+  }
+
+ 
+
+.gift-table{
+  width: 100%;
+  padding: 20px;
+  overflow-x: auto; /* Ensures responsiveness */
 }
 
-/* Outer container with padding */
-.editor-container {
+
+  .editor-container {
     width: 100%; /* Set width to full or a specific width */
     height: 20rem; /* Adjust height as needed */
     background-color: #f1ebe3; /* Background color */
@@ -58,40 +91,77 @@ input,select, .form-group{
     height: 100%; /* Take full height of the container */
     overflow-y: scroll; /* Enable vertical scrolling */
     box-sizing: border-box;
+    background-color: #fff;
+  }
+
+  app-text-editor{
+    background-color: #fff;
+  }
+
+  .editorials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
   }
   
-.gift-table{
-    width: 100%;
-    padding :30px;
-}
-
-.gift-table table{
-    
-    width: 100%;
-}
-
-thead{
-    width: 100%;
-    background-color: #bf9c7d;
-    padding: 10px;
-    color:#ffff;
-    
-}
-
-thead th{
-    border: 1px solid #fff;
-    padding: 15px 10px;
-    text-align: start;
-    border: 1px solid #cacaca;
-}
-
-tbody td{
-    padding:10px;
-    border: 1px solid #cacaca;
-    color: #686767;
-}
-
-tr:nth-child(even) {
-    background: #f1ebe3;
+  .editorials button {
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .editorials .delete-gift-btn {
+    background-color: red;
+  }
+  
+  .editorials .delete-gift-btn:hover {
+    background-color: #c9302c;
+  }
+  
+  .editorials .edit-gift-btn {
+    background-color: #4d798d;
+  }
+  
+  .editorials .edit-gift-btn:hover {
+    background-color: #4d798d;
   }
 
+  /* dash-users.component.css (or your component's CSS file) */
+.pagination {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the pagination controls */
+  align-items: center; /* Vertically align items */
+  margin-top: 20px; /* Add some space above the pagination */
+}
+
+.pagination button {
+  padding: 8px 16px; /* Adjust padding as needed */
+  margin: 0 5px; /* Add spacing between buttons and span */
+  border: none; /* Remove default button border */
+  border-radius: 4px; /* Add rounded corners */
+  background-color: #bf9c7d; /* Your accent color for buttons */
+  color: white; /* White text color */
+  cursor: pointer; /* Indicate it's clickable */
+  font-size: 14px; /* Adjust font size */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.pagination button:hover {
+  background-color: #a67f5e; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+  background-color: #ddd; /* Grayed out when disabled */
+  color: #999;
+  cursor: default; /* No pointer when disabled */
+}
+
+.pagination span {
+  margin: 0 10px; /* Add spacing around the page info */
+  font-size: 16px; /* Adjust font size */
+  color: #686767; /* A bit darker text */
+}

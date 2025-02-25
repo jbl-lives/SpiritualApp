@@ -12,6 +12,8 @@ import { DashToolsComponent } from './categories/dash-tools/dash-tools.component
 import { DashboardComponent } from './dashboard.component';
 import { DashLeadersComponent } from './categories/dash-leaders/dash-leaders.component';
 import { DashUsersComponent } from './categories/dash-users/dash-users.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { DashUsersComponent } from './categories/dash-users/dash-users.component
     SharedModule,
     FormsModule,
     ReactiveFormsModule, 
+    MatSnackBarModule,
     ],
 
   providers: [],

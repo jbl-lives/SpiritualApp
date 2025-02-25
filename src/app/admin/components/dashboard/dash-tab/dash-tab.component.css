@@ -33,7 +33,8 @@
     color: #b0825f;
     font-size: 1.2rem;
     font-weight: bold;
-    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-right: 15px;
     margin-left: auto; /* Pushes the heading to the right */
 }

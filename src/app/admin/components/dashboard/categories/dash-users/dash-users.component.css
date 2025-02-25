@@ -1,11 +1,14 @@
 
+app-dash-tab{
+    top: 0;
+    width: 100%;
+}
+
 .dash-users{
     padding: 40px 30px 30px 30px;
 }
 
-.liner{
-    margin-bottom: 30px;
-}
+
 .user-table{
     width: 100%;
     
@@ -16,30 +19,6 @@
     width: 100%;
 }
 
-thead{
-    width: 100%;
-    background-color: #bf9c7d;
-    padding: 10px;
-    color:#ffff;
-    
-}
-
-thead th{
-    border: 1px solid #fff;
-    padding: 15px 10px;
-    text-align: start;
-    border: 1px solid #cacaca;
-}
-
-tbody td{
-    padding:10px;
-    border: 1px solid #cacaca;
-    color: #686767;
-}
-
-tr:nth-child(even) {
-    background: #f1ebe3;
-  }
 
 .editorials {
     display: flex;

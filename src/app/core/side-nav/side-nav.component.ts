@@ -1,33 +1,32 @@
-import {  Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-
-interface SideNavItem {
-  item: string;
-  image: string;
-  backgroundColor: string;
-}
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.css'] // Note: changed to 'styleUrls'
+  styleUrls: ['./side-nav.component.css']
 })
-export class SideNavComponent implements OnInit {
-  @Input() items: SideNavItem[] = []; // Array of objects with `item` and `image` properties
-  @Input() showSearch: boolean = true; // to show the search bar
+export class SideNavComponent implements OnInit, OnChanges {
+  @Input() items: any[] = []; // Keep same structure
+  @Input() showSearch: boolean = true;
   @Input() categoryItem: string = '';
   @Output() categorySelected = new EventEmitter<string>();
 
   selectedCategory: string = '';
 
   ngOnInit(): void {
-    this.selectedCategory = this.categoryItem || (this.items.length > 0 ? this.items[0].item : '');
-    this.categorySelected.emit(this.selectedCategory); // Emit default category on init
+    // Nothing here anymore, since we handle changes in ngOnChanges
   }
-  
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['categoryItem']) {
+      this.selectedCategory = this.categoryItem || 'All';
+      this.categorySelected.emit(this.selectedCategory);
+    }
+  }
+
   selectCategory(categoryItem: string): void {
     this.selectedCategory = categoryItem;
-    this.categorySelected.emit(this.selectedCategory); // Emit selected category
+    this.categorySelected.emit(this.selectedCategory);
     console.log('Selected category:', this.selectedCategory);
   }
 }
-

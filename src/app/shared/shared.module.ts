@@ -11,6 +11,7 @@ import { SideNavComponent } from '../core/side-nav/side-nav.component';
 import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -21,7 +22,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     TextEditorComponent,
     NotificationComponent,
     LoadingIndicatorComponent,
-    TruncatePipe
+    TruncatePipe,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,

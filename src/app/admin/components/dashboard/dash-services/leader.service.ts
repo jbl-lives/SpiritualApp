@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Leader } from '../categories/dash-leaders/dash-leaders.component';
@@ -30,9 +30,13 @@ export class LeaderService {
     return this.apiUrl;
   }
   // Fetch all leaders
-  getLeaders(): Observable<LeaderResponse> { // Return the interface type
-    return this.http.get<LeaderResponse>(this.apiUrl, { headers: this.getAuthHeaders() });
-}
+  getLeaders(page: number = 1, pageSize: number = 10): Observable<LeaderResponse> { // Add parameters
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('pageSize', pageSize.toString());
+
+    return this.http.get<LeaderResponse>(this.apiUrl, { headers: this.getAuthHeaders(), params: params  }); // Use HttpParams
+  }
 
   getLeader(id: number): Observable<Leader> {
     return this.http.get<Leader>(`${this.apiUrl}/${id}`, { headers: this.getAuthHeaders() });
@@ -54,16 +58,17 @@ export class LeaderService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.getAuthHeaders() }); // Correct URL 
   }
 
-  
-
 
   // Upload an image and return its path
-  uploadImage(imageFile: File, leaderId: number): Observable<any> { // Return Observable<any>
+  uploadImage(imageFile: File, leaderId: number): Observable<any> {
     const formData = new FormData();
-    formData.append('image', imageFile, imageFile.name); // Include filename
-
-    return this.http.post(`${this.apiUrl}/${leaderId}/upload-image`, formData, { headers: this.getAuthHeaders() }); // Correct URL
+    formData.append('image', imageFile, imageFile.name);
+  
+    return this.http.post(`${this.apiUrl}/${leaderId}/upload-image`, formData, { 
+      headers: new HttpHeaders({ Authorization: `Bearer ${localStorage.getItem('authToken')}` }) 
+    });
   }
+  
   
  
 }

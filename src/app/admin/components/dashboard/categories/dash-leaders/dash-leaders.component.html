@@ -3,7 +3,8 @@
         [tabItems]="tabItems" 
         [tabContents]="tabContentTemplates" 
         [selectedTab]="activeTabIndex"  
-        (tabSelected)="onTabSelected($event)">
+        (tabSelected)="onTabSelected($event)"
+        dashHeader="leaders">
     </app-dash-tab>
 
     <!-- Templates for each tab's content -->
@@ -52,9 +53,6 @@
 
     <ng-template #secondTabContent>
         <div class="submission-side" *ngIf="isEditing || isCreating">
-            <h3>Add New Leader</h3>
-            <div class="liner"></div>
-
             <form [formGroup]="leaderForm" (ngSubmit)="isCreating ? onCreateLeader() : onUpdateLeader()" enctype="multipart/form-data">
                 <!-- Name -->
                 <div class="form-group">
@@ -116,10 +114,6 @@
                     </button>
                 </div>
                    
-                  
-                  
-                
-
                 <!-- File Upload -->
                 <div class="form-group file-uploader">
                     <div class="icon-container">
@@ -137,10 +131,13 @@
                 <!-- Submit Button -->
                 <div class="full-width-button">
                     <app-button 
-                        [isSubmit]="true"  [buttonText]="isCreating ? 'Create Leader' : 'Update Leader'"
+                        [isSubmit]="true"  
+                        [buttonText]="isCreating ? 'Create Leader' : 'Update Leader'"
                         hoverBackgroundColor="#bf9c7d"
                         width="28rem">
                     </app-button>
+
+                    <button class="cancel-button" (click)="cancelUpdate()">Cancel Update</button>
                 </div>
             </form>
             

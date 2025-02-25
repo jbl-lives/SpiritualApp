@@ -97,8 +97,19 @@ input[type="file"] {
 .full-width-button {
     width: 28rem ;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
    
+}
+.cancel-button{
+  background: none;
+  margin-top: 7px;
+  margin-left: auto;
+  border: none;
+}
+
+.cancel-button:hover{
+  cursor: pointer;
 }
   
 .full-width-button app-button {
